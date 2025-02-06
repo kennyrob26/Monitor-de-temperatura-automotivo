@@ -5,6 +5,6 @@
     #include "sensorMax31865.h"
     #include "display.h"
 
-    void needActivateAlarm();
+    bool isEngineTemperatureCritical();
 
 #endif

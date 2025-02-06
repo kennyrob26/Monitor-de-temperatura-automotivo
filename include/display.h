@@ -4,17 +4,15 @@
     #include <Arduino.h>
     #include "TM1637Display.h"
     #include "sensorMax31865.h"
-    #include "STM32encoder.h"
 
-    extern STM32encoder encoder;
-    extern bool firstOccurrence;
-    extern int8_t brightness;
+    extern int8_t displayBrightness;
 
     void configDisplay();
-    void setBrightnessDisplay();
-    void showTemperature();
-    void setMaxTemperature();
+    void updateDisplayValue(int8_t value, uint8_t length);
+    void showTemperature();  
     void turnOffDisplay();
-    uint8_t getMaxSetTemperature();
+
+    void setDisplayBrightness(int8_t brightness); 
+    int8_t getDisplayBrightness();
 
 #endif

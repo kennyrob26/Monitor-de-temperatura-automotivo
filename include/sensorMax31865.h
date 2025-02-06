@@ -20,11 +20,14 @@
     #include <Arduino.h>
     #include "Adafruit_MAX31865.h"
     #include <Wire.h>
+    #include "eeprom.h"
 
 
     void configMax31865();
     uint8_t engineTemperature();
     void fautsMAX31865();
+    uint8_t getMaxTemperatureEngine();
+    void setMaxTemperatureEngine(u_int8_t maxTemperature);
 
 
 

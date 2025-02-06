@@ -8,25 +8,41 @@
 #define REFERENCE_RESISTOR 430.0    //Valor do resistor de referência utilizado pelo MAX
 #define NOMINAL_RESISTANCE 100.0    //Resistência nominal do PT100
 
+uint8_t maxTemperatureEngine = readMaxTemperatureEEPROM();
+
 Adafruit_MAX31865 thermometer = Adafruit_MAX31865(CS_PIN, SDI_PIN, SDO_PIN, CLK_PIN);
 
+
+/**
+ * @brief Realiza as configurações necessárias para o funcionamento do sensor RTD através do módulo MAX31865
+ * 
+ * - basicamente chamamos o método begin, passando como parâmetro quantos fios possui o RTD utilizado.
+ */
 void configMax31865()
 {
     thermometer.begin(MAX31865_3WIRE);
 }
 
+/** 
+ * @brief Função responsável por coletar a temperatura atual do motor
+ * 
+ * - `temperature` -> recebe a temperatura coletada pelo sensor RTD, que vamos utilizar valores de 0 a 150ºC
+ * 
+ * - `roundf` arredonda para o inteiro mais próximo, já que valores decimais são irrelevantes neste projeto
+ * 
+ * - `fautsMAX31865` função que detecta se ocorreu alguma falha na leitura
+ * @return retorna a temperatura atual do motor no formato uint8_t, é esperado que o valor retornado esteja entre `0 e 150ºC`
+ */
 uint8_t engineTemperature()
 {
-    uint8_t temperature = thermometer.temperature(NOMINAL_RESISTANCE, REFERENCE_RESISTOR);
-
-    temperature = roundf(temperature);                     //Arredonda para o inteiro mais próximo
+    uint8_t temperature = (uint8_t) roundf(thermometer.temperature(NOMINAL_RESISTANCE, REFERENCE_RESISTOR)); //Arredonda para o inteiro mais próximo
 
     fautsMAX31865();                                       //Verifica se ocorreram falhas na leitura
 
     return(temperature);
 }
 
-//Verifica se existem falhas na leitura
+//Função que verifica se falhas ocorreram na leitura do sensor, segue o padrão de exemplo da biblioteca
 void fautsMAX31865()
 {
       // Check and print any faults
@@ -55,3 +71,12 @@ void fautsMAX31865()
   }
 }
 
+void setMaxTemperatureEngine(u_int8_t maxTemperature)
+{
+  maxTemperatureEngine = maxTemperature;
+}
+
+uint8_t getMaxTemperatureEngine()
+{
+    return maxTemperatureEngine;
+}

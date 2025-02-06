@@ -5,55 +5,56 @@
 
 TM1637Display display(CLK_PIN, DIO_PIN);
 
+int8_t displayBrightness  = 7;
 
-uint8_t maxSetTemperature = 90;
-
-
-STM32encoder encoder(TIM2);
-bool firstOccurrence = false;
-
-int8_t brightness  = 7;
-
-
+/// @brief Configurações iniciais do display
 void configDisplay()
 {
-    display.setBrightness(brightness);
-    //display.showNumberDec(100, false);
-
+    display.setBrightness(displayBrightness);
+    display.showNumberDec(0, false);
 }
+
+/**
+ * @brief Atualiza o valor exibido pelo display
+ * @param value valor que será exibido pelo display (0 a 255)
+ * @param length quantidade de dígitos
+ */
+void updateDisplayValue(int8_t value, uint8_t length)
+{
+    display.showNumberDec(value, false, length, 1);
+}
+
+/// @brief Exibe a temperatura atual no display
 void showTemperature()
-{
-    
-    uint8_t temperature = engineTemperature();
-    display.showNumberDec(temperature, false, 3, 1);
-    //display.showNumberHexEx(0xc, 0, false, 1, 3);
-    
-
-}
-void setBrightnessDisplay()
 {   
-    encoder.bind(&brightness, 1, -1, 7);
+    uint8_t temperature = engineTemperature();
+    updateDisplayValue(temperature, 3);
+}
 
-    display.showNumberDec(brightness );
-
-    if(brightness >= 0)
-        display.setBrightness(brightness);
-    else
+/**
+ *  @brief Define o brilho do display
+ *  @param brightness intensidade do brilho (-1,7), 
+ *  |  -1 -> desligado  |  7 -> brilho maximo
+ */
+void setDisplayBrightness(int8_t brightness)
+{
+    displayBrightness = brightness;
+    if(displayBrightness == -1)
         display.setBrightness(7, false);
-
+    else
+        display.setBrightness(displayBrightness);
 }
 
-void setMaxTemperature()
+/**
+ * @brief Retorna o último brilho definido para o display.
+ * @return Nível de brilho do display (`int8_t`).
+ */  
+int8_t getDisplayBrightness()
 {
-    encoder.bind(&maxSetTemperature, 1, 0, 120);
-    display.showNumberDec(maxSetTemperature);
+    return displayBrightness;
 }
 
-uint8_t getMaxSetTemperature()
-{
-    return maxSetTemperature;
-}
-
+/// @brief Desliga o display
 void turnOffDisplay()
 {
     display.clear();
