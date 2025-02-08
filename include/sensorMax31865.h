@@ -27,7 +27,7 @@
     uint8_t engineTemperature();
     void fautsMAX31865();
     uint8_t getMaxTemperatureEngine();
-    void setMaxTemperatureEngine(u_int8_t maxTemperature);
+    void setEngineOverheatThreshold(u_int8_t maxTemperature);
 
 
 

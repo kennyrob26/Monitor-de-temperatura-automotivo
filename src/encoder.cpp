@@ -9,6 +9,7 @@ volatile uint32_t lastButtonPressTime  =     0;
 volatile uint8_t  buttonPressDuration  =     0;  //em segundos
 volatile bool     isConfigMode     = false; 
 
+
 /**
  * @brief Configuração inicial do encoder
  * 
@@ -64,32 +65,39 @@ void checkEncoderInteraction()
     if(isConfigMode)
     {
         isFirstEncoderInteraction  = true;
+        lastEncoderInteractionTime = millis();
 
         switch (buttonPressDuration)
         {
         //Click
         case 0:
             if(getDisplayBrightness() < 0)
-                setDisplayBrightness (-1);
+            {
+                setDisplayBrightness(7);
+            }
+            else
+            {
+                //lastEncoderInteractionTime = millis();
+                do
+                {     
+                    if(encoder.isUpdated() || isFirstEncoderInteraction )
+                    {
+                        lastEncoderInteractionTime = millis();
+                        encoderSetsDisplayBrightness();
+                    }
+                    encoderInactiveTime = millis() - lastEncoderInteractionTime;
+                    isFirstEncoderInteraction  = false;
+                } while (encoderInactiveTime <= 1500);
+            }
             
-            lastEncoderInteractionTime = millis();
-            do
-            {     
-                if(encoder.isUpdated() || isFirstEncoderInteraction )
-                {
-                    lastEncoderInteractionTime = millis();
-                    encoderSetsDisplayBrightness();
-                }
-                encoderInactiveTime = millis() - lastEncoderInteractionTime;
-                isFirstEncoderInteraction  = false;
-            } while (encoderInactiveTime <= 1500);
+
             break;
 
         //Pressionado por 2 segundos
         case 1:
         case 2:
-            lastEncoderInteractionTime = millis();
-                        do
+            //lastEncoderInteractionTime = millis();
+            do
             {     
                 if(encoder.isUpdated() || isFirstEncoderInteraction )
                 {
@@ -124,10 +132,16 @@ void checkEncoderInteraction()
  */
 void encoderSetsDisplayBrightness()
 {   
-    static int8_t brightness = getDisplayBrightness();
-    encoder.bind(&brightness, 1, -1, 7);
+    static int8_t brightness;
 
+    if(brightness == -1 && getDisplayBrightness() == 7)
+        brightness = getDisplayBrightness();
+
+    encoder.bind(&brightness, 1, -1, 7);
+    
     setDisplayBrightness(brightness);
+
+    
 
     updateDisplayValue(brightness, 3);
     
@@ -147,7 +161,7 @@ void encoderSetsTemperatureEngine()
 {
     static uint8_t maxTemperature = getMaxTemperatureEngine();
     encoder.bind(&maxTemperature, 1, 0, 150);
-    setMaxTemperatureEngine(maxTemperature);
+    setEngineOverheatThreshold(maxTemperature);
     updateDisplayValue(maxTemperature, 3);
 }
 

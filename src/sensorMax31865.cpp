@@ -8,7 +8,7 @@
 #define REFERENCE_RESISTOR 430.0    //Valor do resistor de referência utilizado pelo MAX
 #define NOMINAL_RESISTANCE 100.0    //Resistência nominal do PT100
 
-uint8_t maxTemperatureEngine = readMaxTemperatureEEPROM();
+uint8_t engineOverheatThreshold = readMaxTemperatureEEPROM();
 
 Adafruit_MAX31865 thermometer = Adafruit_MAX31865(CS_PIN, SDI_PIN, SDO_PIN, CLK_PIN);
 
@@ -71,12 +71,23 @@ void fautsMAX31865()
   }
 }
 
-void setMaxTemperatureEngine(u_int8_t maxTemperature)
+/**
+ * @brief Define a `temperatura maxima que o motor pode atingir`, é um ponto crucial de todo o código pois define a temperatura critica. Com base na temperatura critica nós conseguimos `alertar o usuário` caso a temperatura do motor seja maior que a temperatura critica.
+ * 
+ * @param maxTemperature recebe um uint8_t, o valor recebido será definido como a temperatura critica do sistema, é esperado valores entre 0 e 150ºC, mas em definições reais a temperatura critica deverá ficar entre 90 e 100ºC
+ * 
+ */
+void setEngineOverheatThreshold(u_int8_t maxTemperature)
 {
-  maxTemperatureEngine = maxTemperature;
+  engineOverheatThreshold = maxTemperature;
 }
 
+/**
+ * @brief Função responsável por retornar a temperatura critica do sistema.
+ * 
+ * @return A função retorna o conteúdo de `maxTemperatureEngine`, variável que armazena a temperatura critica do sistema. O valor retornado é do tipo `uint8_t`que retorna valores entre 0 a 150ºC
+ */
 uint8_t getMaxTemperatureEngine()
 {
-    return maxTemperatureEngine;
+    return engineOverheatThreshold;
 }

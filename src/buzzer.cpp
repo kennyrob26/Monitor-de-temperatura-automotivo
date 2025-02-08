@@ -10,6 +10,8 @@ uint32_t previousTimeBuzzer = 0;
 bool activeBuzzer         = false;
 bool previousActiveBuzzer = true;
 
+void changeStateBuzzer();
+
 ///@brief Verifica se o motor atingiu a temperatura critica
 ///@return `true` se a temperatura ultrapassou o limite crítico, `false` se está dentro do esperado
 bool isEngineTemperatureCritical()
