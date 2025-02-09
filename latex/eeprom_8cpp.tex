@@ -1,0 +1,101 @@
+\hypertarget{eeprom_8cpp}{}\doxysection{Referência ao ficheiro src/eeprom.cpp}
+\label{eeprom_8cpp}\index{src/eeprom.cpp@{src/eeprom.cpp}}
+{\ttfamily \#include \char`\"{}eeprom.\+h\char`\"{}}\newline
+Diagrama de dependências de inclusão para eeprom.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{eeprom_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{eeprom_8cpp_a67a824c9444bf2157e2c6eb0cf477c2a}{ADDRESS\+\_\+\+MAX\+\_\+\+TEMPERATURE}}~0
+\end{DoxyCompactItemize}
+\doxysubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{eeprom_8cpp_a931db08e8f426c887e31867318063e38}{config\+EEPROM}} ()
+\begin{DoxyCompactList}\small\item\em Configuração inicial da EEPROM. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{eeprom_8cpp_aae43da9ec676ae2490c2a3eed7400b7d}{write\+Max\+Temperature\+EEPROM}} (uint8\+\_\+t max\+Temperature)
+\begin{DoxyCompactList}\small\item\em Registra a temperatura critica na EEPROM. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{eeprom_8cpp_a90a1ff2cb8a6cc8f615ba28ead6cfc14}{read\+Max\+Temperature\+EEPROM}} ()
+\begin{DoxyCompactList}\small\item\em Realiza a leitura da temperatura limite registrada na EEPROM. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{eeprom_8cpp_a24650a1f5ec44738ad330271e38e5a77}{reset\+EEPROM}} ()
+\begin{DoxyCompactList}\small\item\em Reseta os valores da EEPROM para valores padrão, por padrão os valores são\+: \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variáveis}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{eeprom_8cpp_aeb3b55551a5f822967f0b5ed80721afb}{max\+Temperature\+EEPROM}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentação das macros}
+\mbox{\Hypertarget{eeprom_8cpp_a67a824c9444bf2157e2c6eb0cf477c2a}\label{eeprom_8cpp_a67a824c9444bf2157e2c6eb0cf477c2a}} 
+\index{eeprom.cpp@{eeprom.cpp}!ADDRESS\_MAX\_TEMPERATURE@{ADDRESS\_MAX\_TEMPERATURE}}
+\index{ADDRESS\_MAX\_TEMPERATURE@{ADDRESS\_MAX\_TEMPERATURE}!eeprom.cpp@{eeprom.cpp}}
+\doxysubsubsection{\texorpdfstring{ADDRESS\_MAX\_TEMPERATURE}{ADDRESS\_MAX\_TEMPERATURE}}
+{\footnotesize\ttfamily \#define ADDRESS\+\_\+\+MAX\+\_\+\+TEMPERATURE~0}
+
+
+
+\doxysubsection{Documentação das funções}
+\mbox{\Hypertarget{eeprom_8cpp_a931db08e8f426c887e31867318063e38}\label{eeprom_8cpp_a931db08e8f426c887e31867318063e38}} 
+\index{eeprom.cpp@{eeprom.cpp}!configEEPROM@{configEEPROM}}
+\index{configEEPROM@{configEEPROM}!eeprom.cpp@{eeprom.cpp}}
+\doxysubsubsection{\texorpdfstring{configEEPROM()}{configEEPROM()}}
+{\footnotesize\ttfamily void config\+EEPROM (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Configuração inicial da EEPROM. 
+
+\mbox{\Hypertarget{eeprom_8cpp_a90a1ff2cb8a6cc8f615ba28ead6cfc14}\label{eeprom_8cpp_a90a1ff2cb8a6cc8f615ba28ead6cfc14}} 
+\index{eeprom.cpp@{eeprom.cpp}!readMaxTemperatureEEPROM@{readMaxTemperatureEEPROM}}
+\index{readMaxTemperatureEEPROM@{readMaxTemperatureEEPROM}!eeprom.cpp@{eeprom.cpp}}
+\doxysubsubsection{\texorpdfstring{readMaxTemperatureEEPROM()}{readMaxTemperatureEEPROM()}}
+{\footnotesize\ttfamily uint8\+\_\+t read\+Max\+Temperature\+EEPROM (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Realiza a leitura da temperatura limite registrada na EEPROM. 
+
+\begin{DoxyReturn}{Retorna}
+Temperatura limite registrada na EEPROM (0 a 150ºC) (uint8\+\_\+t) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{eeprom_8cpp_a24650a1f5ec44738ad330271e38e5a77}\label{eeprom_8cpp_a24650a1f5ec44738ad330271e38e5a77}} 
+\index{eeprom.cpp@{eeprom.cpp}!resetEEPROM@{resetEEPROM}}
+\index{resetEEPROM@{resetEEPROM}!eeprom.cpp@{eeprom.cpp}}
+\doxysubsubsection{\texorpdfstring{resetEEPROM()}{resetEEPROM()}}
+{\footnotesize\ttfamily void reset\+EEPROM (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reseta os valores da EEPROM para valores padrão, por padrão os valores são\+: 
+
+{\ttfamily max\+Temperature\+EEPROM} -\/\texorpdfstring{$>$}{>} 90ºC \mbox{\Hypertarget{eeprom_8cpp_aae43da9ec676ae2490c2a3eed7400b7d}\label{eeprom_8cpp_aae43da9ec676ae2490c2a3eed7400b7d}} 
+\index{eeprom.cpp@{eeprom.cpp}!writeMaxTemperatureEEPROM@{writeMaxTemperatureEEPROM}}
+\index{writeMaxTemperatureEEPROM@{writeMaxTemperatureEEPROM}!eeprom.cpp@{eeprom.cpp}}
+\doxysubsubsection{\texorpdfstring{writeMaxTemperatureEEPROM()}{writeMaxTemperatureEEPROM()}}
+{\footnotesize\ttfamily void write\+Max\+Temperature\+EEPROM (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{max\+Temperature }\end{DoxyParamCaption})}
+
+
+
+Registra a temperatura critica na EEPROM. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em max\+Temperature} & Valor da temperatura crítica a ser armazenado (0 a 150 ºC) \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentação das variáveis}
+\mbox{\Hypertarget{eeprom_8cpp_aeb3b55551a5f822967f0b5ed80721afb}\label{eeprom_8cpp_aeb3b55551a5f822967f0b5ed80721afb}} 
+\index{eeprom.cpp@{eeprom.cpp}!maxTemperatureEEPROM@{maxTemperatureEEPROM}}
+\index{maxTemperatureEEPROM@{maxTemperatureEEPROM}!eeprom.cpp@{eeprom.cpp}}
+\doxysubsubsection{\texorpdfstring{maxTemperatureEEPROM}{maxTemperatureEEPROM}}
+{\footnotesize\ttfamily uint8\+\_\+t max\+Temperature\+EEPROM = 0}
+

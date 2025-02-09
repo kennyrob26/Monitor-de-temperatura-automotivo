@@ -1,0 +1,168 @@
+\hypertarget{sensorMax31865_8cpp}{}\doxysection{Referência ao ficheiro src/sensor\+Max31865.cpp}
+\label{sensorMax31865_8cpp}\index{src/sensorMax31865.cpp@{src/sensorMax31865.cpp}}
+{\ttfamily \#include \char`\"{}sensor\+Max31865.\+h\char`\"{}}\newline
+Diagrama de dependências de inclusão para sensor\+Max31865.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{sensorMax31865_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{sensorMax31865_8cpp_abfcf05153ddbd63d5aff5d018867cc19}{CS\+\_\+\+PIN}}~PB0
+\item 
+\#define \mbox{\hyperlink{sensorMax31865_8cpp_a40f496979bb9d7199cca5e0ce136e698}{CLK\+\_\+\+PIN}}~PA5
+\item 
+\#define \mbox{\hyperlink{sensorMax31865_8cpp_a3f3aa631ddab36f9d478c746a731b013}{SDO\+\_\+\+PIN}}~PA6
+\item 
+\#define \mbox{\hyperlink{sensorMax31865_8cpp_ad0516c2fb776c97bce793cd870cbf1b7}{SDI\+\_\+\+PIN}}~PA7
+\item 
+\#define \mbox{\hyperlink{sensorMax31865_8cpp_a9949925e1930570c44b86a72c396d614}{REFERENCE\+\_\+\+RESISTOR}}~430.\+0
+\item 
+\#define \mbox{\hyperlink{sensorMax31865_8cpp_ab6c2487834bca250882f8ce068b6ea6a}{NOMINAL\+\_\+\+RESISTANCE}}~100.\+0
+\end{DoxyCompactItemize}
+\doxysubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{sensorMax31865_8cpp_a575f343e22a08b5473eb2c6223529d99}{config\+Max31865}} ()
+\begin{DoxyCompactList}\small\item\em Realiza as configurações necessárias para o funcionamento do sensor RTD através do módulo MAX31865. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{sensorMax31865_8cpp_a08c3fb91d797895ccb3b085d22b01cac}{engine\+Temperature}} ()
+\begin{DoxyCompactList}\small\item\em Função responsável por coletar a temperatura atual do motor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sensorMax31865_8cpp_aa4cf943c296dfe30b734368cc7134cdc}{fauts\+MAX31865}} ()
+\item 
+void \mbox{\hyperlink{sensorMax31865_8cpp_a3e9506b792e13bc1632211d1b4ba0de7}{set\+Engine\+Overheat\+Threshold}} (u\+\_\+int8\+\_\+t max\+Temperature)
+\begin{DoxyCompactList}\small\item\em Define a {\ttfamily temperatura maxima que o motor pode atingir}, é um ponto crucial de todo o código pois define a temperatura critica. Com base na temperatura critica nós conseguimos {\ttfamily alertar o usuário} caso a temperatura do motor seja maior que a temperatura critica. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{sensorMax31865_8cpp_a099cd3a6293bcfcea6c2dd5a202a53c3}{get\+Max\+Temperature\+Engine}} ()
+\begin{DoxyCompactList}\small\item\em Função responsável por retornar a temperatura critica do sistema. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variáveis}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{sensorMax31865_8cpp_a8709f9936a24160fe8d5ba5008d7c519}{engine\+Overheat\+Threshold}} = \mbox{\hyperlink{eeprom_8cpp_a90a1ff2cb8a6cc8f615ba28ead6cfc14}{read\+Max\+Temperature\+EEPROM}}()
+\item 
+Adafruit\+\_\+\+MAX31865 \mbox{\hyperlink{sensorMax31865_8cpp_ae2940d5147cf4a84449a710e2e6fa847}{thermometer}} = Adafruit\+\_\+\+MAX31865(\mbox{\hyperlink{sensorMax31865_8cpp_abfcf05153ddbd63d5aff5d018867cc19}{CS\+\_\+\+PIN}}, \mbox{\hyperlink{sensorMax31865_8cpp_ad0516c2fb776c97bce793cd870cbf1b7}{SDI\+\_\+\+PIN}}, \mbox{\hyperlink{sensorMax31865_8cpp_a3f3aa631ddab36f9d478c746a731b013}{SDO\+\_\+\+PIN}}, \mbox{\hyperlink{sensorMax31865_8cpp_a40f496979bb9d7199cca5e0ce136e698}{CLK\+\_\+\+PIN}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentação das macros}
+\mbox{\Hypertarget{sensorMax31865_8cpp_a40f496979bb9d7199cca5e0ce136e698}\label{sensorMax31865_8cpp_a40f496979bb9d7199cca5e0ce136e698}} 
+\index{sensorMax31865.cpp@{sensorMax31865.cpp}!CLK\_PIN@{CLK\_PIN}}
+\index{CLK\_PIN@{CLK\_PIN}!sensorMax31865.cpp@{sensorMax31865.cpp}}
+\doxysubsubsection{\texorpdfstring{CLK\_PIN}{CLK\_PIN}}
+{\footnotesize\ttfamily \#define CLK\+\_\+\+PIN~PA5}
+
+\mbox{\Hypertarget{sensorMax31865_8cpp_abfcf05153ddbd63d5aff5d018867cc19}\label{sensorMax31865_8cpp_abfcf05153ddbd63d5aff5d018867cc19}} 
+\index{sensorMax31865.cpp@{sensorMax31865.cpp}!CS\_PIN@{CS\_PIN}}
+\index{CS\_PIN@{CS\_PIN}!sensorMax31865.cpp@{sensorMax31865.cpp}}
+\doxysubsubsection{\texorpdfstring{CS\_PIN}{CS\_PIN}}
+{\footnotesize\ttfamily \#define CS\+\_\+\+PIN~PB0}
+
+\mbox{\Hypertarget{sensorMax31865_8cpp_ab6c2487834bca250882f8ce068b6ea6a}\label{sensorMax31865_8cpp_ab6c2487834bca250882f8ce068b6ea6a}} 
+\index{sensorMax31865.cpp@{sensorMax31865.cpp}!NOMINAL\_RESISTANCE@{NOMINAL\_RESISTANCE}}
+\index{NOMINAL\_RESISTANCE@{NOMINAL\_RESISTANCE}!sensorMax31865.cpp@{sensorMax31865.cpp}}
+\doxysubsubsection{\texorpdfstring{NOMINAL\_RESISTANCE}{NOMINAL\_RESISTANCE}}
+{\footnotesize\ttfamily \#define NOMINAL\+\_\+\+RESISTANCE~100.\+0}
+
+\mbox{\Hypertarget{sensorMax31865_8cpp_a9949925e1930570c44b86a72c396d614}\label{sensorMax31865_8cpp_a9949925e1930570c44b86a72c396d614}} 
+\index{sensorMax31865.cpp@{sensorMax31865.cpp}!REFERENCE\_RESISTOR@{REFERENCE\_RESISTOR}}
+\index{REFERENCE\_RESISTOR@{REFERENCE\_RESISTOR}!sensorMax31865.cpp@{sensorMax31865.cpp}}
+\doxysubsubsection{\texorpdfstring{REFERENCE\_RESISTOR}{REFERENCE\_RESISTOR}}
+{\footnotesize\ttfamily \#define REFERENCE\+\_\+\+RESISTOR~430.\+0}
+
+\mbox{\Hypertarget{sensorMax31865_8cpp_ad0516c2fb776c97bce793cd870cbf1b7}\label{sensorMax31865_8cpp_ad0516c2fb776c97bce793cd870cbf1b7}} 
+\index{sensorMax31865.cpp@{sensorMax31865.cpp}!SDI\_PIN@{SDI\_PIN}}
+\index{SDI\_PIN@{SDI\_PIN}!sensorMax31865.cpp@{sensorMax31865.cpp}}
+\doxysubsubsection{\texorpdfstring{SDI\_PIN}{SDI\_PIN}}
+{\footnotesize\ttfamily \#define SDI\+\_\+\+PIN~PA7}
+
+\mbox{\Hypertarget{sensorMax31865_8cpp_a3f3aa631ddab36f9d478c746a731b013}\label{sensorMax31865_8cpp_a3f3aa631ddab36f9d478c746a731b013}} 
+\index{sensorMax31865.cpp@{sensorMax31865.cpp}!SDO\_PIN@{SDO\_PIN}}
+\index{SDO\_PIN@{SDO\_PIN}!sensorMax31865.cpp@{sensorMax31865.cpp}}
+\doxysubsubsection{\texorpdfstring{SDO\_PIN}{SDO\_PIN}}
+{\footnotesize\ttfamily \#define SDO\+\_\+\+PIN~PA6}
+
+
+
+\doxysubsection{Documentação das funções}
+\mbox{\Hypertarget{sensorMax31865_8cpp_a575f343e22a08b5473eb2c6223529d99}\label{sensorMax31865_8cpp_a575f343e22a08b5473eb2c6223529d99}} 
+\index{sensorMax31865.cpp@{sensorMax31865.cpp}!configMax31865@{configMax31865}}
+\index{configMax31865@{configMax31865}!sensorMax31865.cpp@{sensorMax31865.cpp}}
+\doxysubsubsection{\texorpdfstring{configMax31865()}{configMax31865()}}
+{\footnotesize\ttfamily void config\+Max31865 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Realiza as configurações necessárias para o funcionamento do sensor RTD através do módulo MAX31865. 
+
+
+\begin{DoxyItemize}
+\item basicamente chamamos o método begin, passando como parâmetro quantos fios possui o RTD utilizado. 
+\end{DoxyItemize}\mbox{\Hypertarget{sensorMax31865_8cpp_a08c3fb91d797895ccb3b085d22b01cac}\label{sensorMax31865_8cpp_a08c3fb91d797895ccb3b085d22b01cac}} 
+\index{sensorMax31865.cpp@{sensorMax31865.cpp}!engineTemperature@{engineTemperature}}
+\index{engineTemperature@{engineTemperature}!sensorMax31865.cpp@{sensorMax31865.cpp}}
+\doxysubsubsection{\texorpdfstring{engineTemperature()}{engineTemperature()}}
+{\footnotesize\ttfamily uint8\+\_\+t engine\+Temperature (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Função responsável por coletar a temperatura atual do motor. 
+
+
+\begin{DoxyItemize}
+\item {\ttfamily temperature} -\/\texorpdfstring{$>$}{>} recebe a temperatura coletada pelo sensor RTD, que vamos utilizar valores de 0 a 150ºC
+\item {\ttfamily roundf} arredonda para o inteiro mais próximo, já que valores decimais são irrelevantes neste projeto
+\item {\ttfamily fauts\+MAX31865} função que detecta se ocorreu alguma falha na leitura \begin{DoxyReturn}{Retorna}
+retorna a temperatura atual do motor no formato uint8\+\_\+t, é esperado que o valor retornado esteja entre {\ttfamily 0 e 150ºC} 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\mbox{\Hypertarget{sensorMax31865_8cpp_aa4cf943c296dfe30b734368cc7134cdc}\label{sensorMax31865_8cpp_aa4cf943c296dfe30b734368cc7134cdc}} 
+\index{sensorMax31865.cpp@{sensorMax31865.cpp}!fautsMAX31865@{fautsMAX31865}}
+\index{fautsMAX31865@{fautsMAX31865}!sensorMax31865.cpp@{sensorMax31865.cpp}}
+\doxysubsubsection{\texorpdfstring{fautsMAX31865()}{fautsMAX31865()}}
+{\footnotesize\ttfamily void fauts\+MAX31865 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sensorMax31865_8cpp_a099cd3a6293bcfcea6c2dd5a202a53c3}\label{sensorMax31865_8cpp_a099cd3a6293bcfcea6c2dd5a202a53c3}} 
+\index{sensorMax31865.cpp@{sensorMax31865.cpp}!getMaxTemperatureEngine@{getMaxTemperatureEngine}}
+\index{getMaxTemperatureEngine@{getMaxTemperatureEngine}!sensorMax31865.cpp@{sensorMax31865.cpp}}
+\doxysubsubsection{\texorpdfstring{getMaxTemperatureEngine()}{getMaxTemperatureEngine()}}
+{\footnotesize\ttfamily uint8\+\_\+t get\+Max\+Temperature\+Engine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Função responsável por retornar a temperatura critica do sistema. 
+
+\begin{DoxyReturn}{Retorna}
+A função retorna o conteúdo de {\ttfamily max\+Temperature\+Engine}, variável que armazena a temperatura critica do sistema. O valor retornado é do tipo {\ttfamily uint8\+\_\+t}que retorna valores entre 0 a 150ºC 
+\end{DoxyReturn}
+\mbox{\Hypertarget{sensorMax31865_8cpp_a3e9506b792e13bc1632211d1b4ba0de7}\label{sensorMax31865_8cpp_a3e9506b792e13bc1632211d1b4ba0de7}} 
+\index{sensorMax31865.cpp@{sensorMax31865.cpp}!setEngineOverheatThreshold@{setEngineOverheatThreshold}}
+\index{setEngineOverheatThreshold@{setEngineOverheatThreshold}!sensorMax31865.cpp@{sensorMax31865.cpp}}
+\doxysubsubsection{\texorpdfstring{setEngineOverheatThreshold()}{setEngineOverheatThreshold()}}
+{\footnotesize\ttfamily void set\+Engine\+Overheat\+Threshold (\begin{DoxyParamCaption}\item[{u\+\_\+int8\+\_\+t}]{max\+Temperature }\end{DoxyParamCaption})}
+
+
+
+Define a {\ttfamily temperatura maxima que o motor pode atingir}, é um ponto crucial de todo o código pois define a temperatura critica. Com base na temperatura critica nós conseguimos {\ttfamily alertar o usuário} caso a temperatura do motor seja maior que a temperatura critica. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em max\+Temperature} & recebe um uint8\+\_\+t, o valor recebido será definido como a temperatura critica do sistema, é esperado valores entre 0 e 150ºC, mas em definições reais a temperatura critica deverá ficar entre 90 e 100ºC \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentação das variáveis}
+\mbox{\Hypertarget{sensorMax31865_8cpp_a8709f9936a24160fe8d5ba5008d7c519}\label{sensorMax31865_8cpp_a8709f9936a24160fe8d5ba5008d7c519}} 
+\index{sensorMax31865.cpp@{sensorMax31865.cpp}!engineOverheatThreshold@{engineOverheatThreshold}}
+\index{engineOverheatThreshold@{engineOverheatThreshold}!sensorMax31865.cpp@{sensorMax31865.cpp}}
+\doxysubsubsection{\texorpdfstring{engineOverheatThreshold}{engineOverheatThreshold}}
+{\footnotesize\ttfamily uint8\+\_\+t engine\+Overheat\+Threshold = \mbox{\hyperlink{eeprom_8cpp_a90a1ff2cb8a6cc8f615ba28ead6cfc14}{read\+Max\+Temperature\+EEPROM}}()}
+
+\mbox{\Hypertarget{sensorMax31865_8cpp_ae2940d5147cf4a84449a710e2e6fa847}\label{sensorMax31865_8cpp_ae2940d5147cf4a84449a710e2e6fa847}} 
+\index{sensorMax31865.cpp@{sensorMax31865.cpp}!thermometer@{thermometer}}
+\index{thermometer@{thermometer}!sensorMax31865.cpp@{sensorMax31865.cpp}}
+\doxysubsubsection{\texorpdfstring{thermometer}{thermometer}}
+{\footnotesize\ttfamily Adafruit\+\_\+\+MAX31865 thermometer = Adafruit\+\_\+\+MAX31865(\mbox{\hyperlink{sensorMax31865_8cpp_abfcf05153ddbd63d5aff5d018867cc19}{CS\+\_\+\+PIN}}, \mbox{\hyperlink{sensorMax31865_8cpp_ad0516c2fb776c97bce793cd870cbf1b7}{SDI\+\_\+\+PIN}}, \mbox{\hyperlink{sensorMax31865_8cpp_a3f3aa631ddab36f9d478c746a731b013}{SDO\+\_\+\+PIN}}, \mbox{\hyperlink{sensorMax31865_8cpp_a40f496979bb9d7199cca5e0ce136e698}{CLK\+\_\+\+PIN}})}
+

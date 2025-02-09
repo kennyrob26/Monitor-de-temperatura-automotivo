@@ -1,0 +1,164 @@
+\hypertarget{encoder_8cpp}{}\doxysection{Referência ao ficheiro src/encoder.cpp}
+\label{encoder_8cpp}\index{src/encoder.cpp@{src/encoder.cpp}}
+{\ttfamily \#include \char`\"{}encoder.\+h\char`\"{}}\newline
+Diagrama de dependências de inclusão para encoder.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{encoder_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{encoder_8cpp_abc31b21feb9bcfc3c8493ac0d9677723}{BTN\+\_\+\+ENCODER}}~PA2
+\end{DoxyCompactItemize}
+\doxysubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+STM32encoder \mbox{\hyperlink{encoder_8cpp_a11cf74ef592c184fa3633aeec4afb50d}{encoder}} (TIM2)
+\item 
+void \mbox{\hyperlink{encoder_8cpp_a91621e3c7eba63f6d7078981870bcf93}{config\+Encoder}} ()
+\begin{DoxyCompactList}\small\item\em Configuração inicial do encoder. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{encoder_8cpp_a3823d9188c1dfb4a5a60c0cca3e35c49}{measure\+Button\+Press\+Time}} ()
+\begin{DoxyCompactList}\small\item\em Função Callback chamada pela interrupção gerada BTN\+\_\+\+ENCODER, tem como objetivo calcular quanto tempo o botão ficou pressionado ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{encoder_8cpp_a92971d532f6cc7bb0e3907130dff4eff}{check\+Encoder\+Interaction}} ()
+\begin{DoxyCompactList}\small\item\em Função que trata as interações com o encoder, ela é chamada sempre que {\ttfamily \mbox{\hyperlink{encoder_8cpp_a3823d9188c1dfb4a5a60c0cca3e35c49}{measure\+Button\+Press\+Time()}}} define a flag{\ttfamily is\+Config\+Mode} como {\ttfamily true} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{encoder_8cpp_a62bb2ae6468a1f1267f99b3cdd30c037}{encoder\+Sets\+Display\+Brightness}} ()
+\begin{DoxyCompactList}\small\item\em Função chamada quando o {\ttfamily BTN\+\_\+\+ENCODER} é clicado. Define o brilho do display através da rotação do encoder. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{encoder_8cpp_a269db7558124b978c565130eb82f0d3a}{encoder\+Sets\+Temperature\+Engine}} ()
+\begin{DoxyCompactList}\small\item\em Função chamada quando o {\ttfamily BTN\+\_\+\+ENCODER} é pressionado por 2 segundos. Altera a temperatura critica do motor com base na rotação do encoder. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variáveis}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{encoder_8cpp_a55f528e76117ecc44f3aad4f564f6cbc}{is\+First\+Encoder\+Interaction}} = false
+\item 
+volatile uint32\+\_\+t \mbox{\hyperlink{encoder_8cpp_a315c3919fc30332a3dd6572136b0c479}{last\+Button\+Press\+Time}} = 0
+\item 
+volatile uint8\+\_\+t \mbox{\hyperlink{encoder_8cpp_ac7b97f165f7e84aac2de7c4e65b9b40d}{button\+Press\+Duration}} = 0
+\item 
+volatile bool \mbox{\hyperlink{encoder_8cpp_a3814930587926a424e61eb7c9787578b}{is\+Config\+Mode}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentação das macros}
+\mbox{\Hypertarget{encoder_8cpp_abc31b21feb9bcfc3c8493ac0d9677723}\label{encoder_8cpp_abc31b21feb9bcfc3c8493ac0d9677723}} 
+\index{encoder.cpp@{encoder.cpp}!BTN\_ENCODER@{BTN\_ENCODER}}
+\index{BTN\_ENCODER@{BTN\_ENCODER}!encoder.cpp@{encoder.cpp}}
+\doxysubsubsection{\texorpdfstring{BTN\_ENCODER}{BTN\_ENCODER}}
+{\footnotesize\ttfamily \#define BTN\+\_\+\+ENCODER~PA2}
+
+
+
+\doxysubsection{Documentação das funções}
+\mbox{\Hypertarget{encoder_8cpp_a92971d532f6cc7bb0e3907130dff4eff}\label{encoder_8cpp_a92971d532f6cc7bb0e3907130dff4eff}} 
+\index{encoder.cpp@{encoder.cpp}!checkEncoderInteraction@{checkEncoderInteraction}}
+\index{checkEncoderInteraction@{checkEncoderInteraction}!encoder.cpp@{encoder.cpp}}
+\doxysubsubsection{\texorpdfstring{checkEncoderInteraction()}{checkEncoderInteraction()}}
+{\footnotesize\ttfamily void check\+Encoder\+Interaction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Função que trata as interações com o encoder, ela é chamada sempre que {\ttfamily \mbox{\hyperlink{encoder_8cpp_a3823d9188c1dfb4a5a60c0cca3e35c49}{measure\+Button\+Press\+Time()}}} define a flag{\ttfamily is\+Config\+Mode} como {\ttfamily true} 
+
+O {\ttfamily switch} verifica o valor de {\ttfamily button\+Pressed\+Duration}, e com base no tempo pressionado o encoder realiza ações diferentes
+
+
+\begin{DoxyItemize}
+\item {\ttfamily 0 segundo} (click) -\/\texorpdfstring{$>$}{>} conseguimos alterar o brilho do display rotacionando o encoder (-\/1 a 7)
+\item {\ttfamily 2 segundos} -\/\texorpdfstring{$>$}{>} conseguimos definir a temperatura critica do motor rotacionando o encoder (0 a 150ºC), após definida a temperatura ela é salva na EEPROM utilizando a função {\ttfamily write\+Max\+Temperature\+EEPROM}
+\item {\ttfamily 4 segundos} -\/\texorpdfstring{$>$}{>} chama a função {\ttfamily \mbox{\hyperlink{eeprom_8cpp_a24650a1f5ec44738ad330271e38e5a77}{reset\+EEPROM()}}}resetando a EEPROM para os valores default
+\end{DoxyItemize}
+
+Se o usuário deixar o encoder inativo por 1.\+5s o sistema sai do modo de configuração \mbox{\Hypertarget{encoder_8cpp_a91621e3c7eba63f6d7078981870bcf93}\label{encoder_8cpp_a91621e3c7eba63f6d7078981870bcf93}} 
+\index{encoder.cpp@{encoder.cpp}!configEncoder@{configEncoder}}
+\index{configEncoder@{configEncoder}!encoder.cpp@{encoder.cpp}}
+\doxysubsubsection{\texorpdfstring{configEncoder()}{configEncoder()}}
+{\footnotesize\ttfamily void config\+Encoder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Configuração inicial do encoder. 
+
+Define qual pino será utilizado pelo botão do encoder, e sua respectiva interrupção \mbox{\Hypertarget{encoder_8cpp_a11cf74ef592c184fa3633aeec4afb50d}\label{encoder_8cpp_a11cf74ef592c184fa3633aeec4afb50d}} 
+\index{encoder.cpp@{encoder.cpp}!encoder@{encoder}}
+\index{encoder@{encoder}!encoder.cpp@{encoder.cpp}}
+\doxysubsubsection{\texorpdfstring{encoder()}{encoder()}}
+{\footnotesize\ttfamily STM32encoder encoder (\begin{DoxyParamCaption}\item[{TIM2}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{encoder_8cpp_a62bb2ae6468a1f1267f99b3cdd30c037}\label{encoder_8cpp_a62bb2ae6468a1f1267f99b3cdd30c037}} 
+\index{encoder.cpp@{encoder.cpp}!encoderSetsDisplayBrightness@{encoderSetsDisplayBrightness}}
+\index{encoderSetsDisplayBrightness@{encoderSetsDisplayBrightness}!encoder.cpp@{encoder.cpp}}
+\doxysubsubsection{\texorpdfstring{encoderSetsDisplayBrightness()}{encoderSetsDisplayBrightness()}}
+{\footnotesize\ttfamily void encoder\+Sets\+Display\+Brightness (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Função chamada quando o {\ttfamily BTN\+\_\+\+ENCODER} é clicado. Define o brilho do display através da rotação do encoder. 
+
+
+\begin{DoxyItemize}
+\item {\ttfamily brightness} recebe o brilho atual do display
+\item {\ttfamily encoder.\+bind} incrementa ou decrementa 1 de {\ttfamily brightness} com base na rotação do encoder, os valores válidos vão de {\ttfamily -\/1 a 7}, onde {\ttfamily -\/1 desliga} o display, e {\ttfamily 7 é o brilho máximo}.
+\item {\ttfamily set\+Display\+Brightness} aplica o brilho no display, e {\ttfamily update\+Display\+Value} demonstra o nível atual do brilho 
+\end{DoxyItemize}\mbox{\Hypertarget{encoder_8cpp_a269db7558124b978c565130eb82f0d3a}\label{encoder_8cpp_a269db7558124b978c565130eb82f0d3a}} 
+\index{encoder.cpp@{encoder.cpp}!encoderSetsTemperatureEngine@{encoderSetsTemperatureEngine}}
+\index{encoderSetsTemperatureEngine@{encoderSetsTemperatureEngine}!encoder.cpp@{encoder.cpp}}
+\doxysubsubsection{\texorpdfstring{encoderSetsTemperatureEngine()}{encoderSetsTemperatureEngine()}}
+{\footnotesize\ttfamily void encoder\+Sets\+Temperature\+Engine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Função chamada quando o {\ttfamily BTN\+\_\+\+ENCODER} é pressionado por 2 segundos. Altera a temperatura critica do motor com base na rotação do encoder. 
+
+
+\begin{DoxyItemize}
+\item {\ttfamily max\+Temperature} recebe a ultima temperatura critica setada
+\item {\ttfamily encoder.\+bind} incrementa ou decrementa em 1 {\ttfamily max\+Temperature}com base na rotação do encoder, os valores válidos são de {\ttfamily 0 à 150ºC}
+\item {\ttfamily set\+Max\+Temperature} aplica a nova temperatura definida pelo encoder, enquanto {\ttfamily update\+Display\+Value} demonstra o novo valor 
+\end{DoxyItemize}\mbox{\Hypertarget{encoder_8cpp_a3823d9188c1dfb4a5a60c0cca3e35c49}\label{encoder_8cpp_a3823d9188c1dfb4a5a60c0cca3e35c49}} 
+\index{encoder.cpp@{encoder.cpp}!measureButtonPressTime@{measureButtonPressTime}}
+\index{measureButtonPressTime@{measureButtonPressTime}!encoder.cpp@{encoder.cpp}}
+\doxysubsubsection{\texorpdfstring{measureButtonPressTime()}{measureButtonPressTime()}}
+{\footnotesize\ttfamily void measure\+Button\+Press\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Função Callback chamada pela interrupção gerada BTN\+\_\+\+ENCODER, tem como objetivo calcular quanto tempo o botão ficou pressionado ~\newline
+ 
+
+
+\begin{DoxyItemize}
+\item Na borda de descida (LOW) reseta o tempo atribuido a variável {\ttfamily last\+Button\+Press\+Time}
+\item Na borda de subida (HIGH) calcula o tempo em que ficou pressionado com base na diferença entre {\ttfamily micros()} e {\ttfamily last\+Button\+Press\+Time}
+\item {\ttfamily button\+Press\+Duration} recebe o tempo pressionamento em segundos, arredondado para o inteiro mais próximo.
+\item {\ttfamily is\+Config\+Mode} flag que é {\ttfamily true} se existir interação com o botão, permitindo tratar fora da interrupção a interação com o encoder 
+\end{DoxyItemize}
+
+\doxysubsection{Documentação das variáveis}
+\mbox{\Hypertarget{encoder_8cpp_ac7b97f165f7e84aac2de7c4e65b9b40d}\label{encoder_8cpp_ac7b97f165f7e84aac2de7c4e65b9b40d}} 
+\index{encoder.cpp@{encoder.cpp}!buttonPressDuration@{buttonPressDuration}}
+\index{buttonPressDuration@{buttonPressDuration}!encoder.cpp@{encoder.cpp}}
+\doxysubsubsection{\texorpdfstring{buttonPressDuration}{buttonPressDuration}}
+{\footnotesize\ttfamily volatile uint8\+\_\+t button\+Press\+Duration = 0}
+
+\mbox{\Hypertarget{encoder_8cpp_a3814930587926a424e61eb7c9787578b}\label{encoder_8cpp_a3814930587926a424e61eb7c9787578b}} 
+\index{encoder.cpp@{encoder.cpp}!isConfigMode@{isConfigMode}}
+\index{isConfigMode@{isConfigMode}!encoder.cpp@{encoder.cpp}}
+\doxysubsubsection{\texorpdfstring{isConfigMode}{isConfigMode}}
+{\footnotesize\ttfamily volatile bool is\+Config\+Mode = false}
+
+\mbox{\Hypertarget{encoder_8cpp_a55f528e76117ecc44f3aad4f564f6cbc}\label{encoder_8cpp_a55f528e76117ecc44f3aad4f564f6cbc}} 
+\index{encoder.cpp@{encoder.cpp}!isFirstEncoderInteraction@{isFirstEncoderInteraction}}
+\index{isFirstEncoderInteraction@{isFirstEncoderInteraction}!encoder.cpp@{encoder.cpp}}
+\doxysubsubsection{\texorpdfstring{isFirstEncoderInteraction}{isFirstEncoderInteraction}}
+{\footnotesize\ttfamily bool is\+First\+Encoder\+Interaction = false}
+
+\mbox{\Hypertarget{encoder_8cpp_a315c3919fc30332a3dd6572136b0c479}\label{encoder_8cpp_a315c3919fc30332a3dd6572136b0c479}} 
+\index{encoder.cpp@{encoder.cpp}!lastButtonPressTime@{lastButtonPressTime}}
+\index{lastButtonPressTime@{lastButtonPressTime}!encoder.cpp@{encoder.cpp}}
+\doxysubsubsection{\texorpdfstring{lastButtonPressTime}{lastButtonPressTime}}
+{\footnotesize\ttfamily volatile uint32\+\_\+t last\+Button\+Press\+Time = 0}
+

@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Monitor de temperatura Automotivo: Referência ao ficheiro src/buzzer.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Monitor de temperatura Automotivo
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Localizar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Funções</a> &#124;
+<a href="#var-members">Variáveis</a>  </div>
+  <div class="headertitle"><div class="title">Referência ao ficheiro buzzer.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;buzzer.h&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Diagrama de dependências de inclusão para buzzer.cpp:</div>
+<div class="dyncontent">
+<div class="center"><img src="buzzer_8cpp__incl.png" border="0" usemap="#asrc_2buzzer_8cpp" alt=""/></div>
+<map name="asrc_2buzzer_8cpp" id="asrc_2buzzer_8cpp">
+<area shape="rect" title=" " alt="" coords="5,5,120,32"/>
+<area shape="rect" title=" " alt="" coords="25,80,101,107"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ab61d0981ed42df9e18211b273d22cfcd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="buzzer_8cpp.html#ab61d0981ed42df9e18211b273d22cfcd">BUZZER_PIN</a>&#160;&#160;&#160;PB15</td></tr>
+<tr class="separator:ab61d0981ed42df9e18211b273d22cfcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf81307f8741d36e6269f1e529ab7d65"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="buzzer_8cpp.html#acf81307f8741d36e6269f1e529ab7d65">TIME_TONE</a>&#160;&#160;&#160;50</td></tr>
+<tr class="separator:acf81307f8741d36e6269f1e529ab7d65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84142cd3e3bf14c4ecd4b6707a808c39"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="buzzer_8cpp.html#a84142cd3e3bf14c4ecd4b6707a808c39">FREQUENCY</a>&#160;&#160;&#160;2200</td></tr>
+<tr class="separator:a84142cd3e3bf14c4ecd4b6707a808c39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e3d33dd2b0aa8bbb50544c3d502a886"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="buzzer_8cpp.html#a5e3d33dd2b0aa8bbb50544c3d502a886">TIME_NO_TONE</a>&#160;&#160;&#160;400</td></tr>
+<tr class="separator:a5e3d33dd2b0aa8bbb50544c3d502a886"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:a2b4d8c26e514981ac0a50d98c0868cf9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="buzzer_8cpp.html#a2b4d8c26e514981ac0a50d98c0868cf9">changeStateBuzzer</a> ()</td></tr>
+<tr class="separator:a2b4d8c26e514981ac0a50d98c0868cf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1abd761ca7f9508bac3eb69d874daa68"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="buzzer_8cpp.html#a1abd761ca7f9508bac3eb69d874daa68">isEngineTemperatureCritical</a> ()</td></tr>
+<tr class="memdesc:a1abd761ca7f9508bac3eb69d874daa68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se o motor atingiu a temperatura critica.  <a href="buzzer_8cpp.html#a1abd761ca7f9508bac3eb69d874daa68">Mais...</a><br /></td></tr>
+<tr class="separator:a1abd761ca7f9508bac3eb69d874daa68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variáveis</h2></td></tr>
+<tr class="memitem:a2e24204e7d4a096b0ab787a0a872e4d4"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="buzzer_8cpp.html#a2e24204e7d4a096b0ab787a0a872e4d4">previousTimeBuzzer</a> = 0</td></tr>
+<tr class="separator:a2e24204e7d4a096b0ab787a0a872e4d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f8e329da4011626d83b98f122bb90e2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="buzzer_8cpp.html#a1f8e329da4011626d83b98f122bb90e2">activeBuzzer</a> = false</td></tr>
+<tr class="separator:a1f8e329da4011626d83b98f122bb90e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73d7a8f9e247e74206b54c8439c3772a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="buzzer_8cpp.html#a73d7a8f9e247e74206b54c8439c3772a">previousActiveBuzzer</a> = true</td></tr>
+<tr class="separator:a73d7a8f9e247e74206b54c8439c3772a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentação das macros</h2>
+<a id="ab61d0981ed42df9e18211b273d22cfcd" name="ab61d0981ed42df9e18211b273d22cfcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab61d0981ed42df9e18211b273d22cfcd">&#9670;&nbsp;</a></span>BUZZER_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUZZER_PIN&#160;&#160;&#160;PB15</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a84142cd3e3bf14c4ecd4b6707a808c39" name="a84142cd3e3bf14c4ecd4b6707a808c39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84142cd3e3bf14c4ecd4b6707a808c39">&#9670;&nbsp;</a></span>FREQUENCY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FREQUENCY&#160;&#160;&#160;2200</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5e3d33dd2b0aa8bbb50544c3d502a886" name="a5e3d33dd2b0aa8bbb50544c3d502a886"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e3d33dd2b0aa8bbb50544c3d502a886">&#9670;&nbsp;</a></span>TIME_NO_TONE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TIME_NO_TONE&#160;&#160;&#160;400</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acf81307f8741d36e6269f1e529ab7d65" name="acf81307f8741d36e6269f1e529ab7d65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf81307f8741d36e6269f1e529ab7d65">&#9670;&nbsp;</a></span>TIME_TONE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TIME_TONE&#160;&#160;&#160;50</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentação das funções</h2>
+<a id="a2b4d8c26e514981ac0a50d98c0868cf9" name="a2b4d8c26e514981ac0a50d98c0868cf9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b4d8c26e514981ac0a50d98c0868cf9">&#9670;&nbsp;</a></span>changeStateBuzzer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void changeStateBuzzer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1abd761ca7f9508bac3eb69d874daa68" name="a1abd761ca7f9508bac3eb69d874daa68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1abd761ca7f9508bac3eb69d874daa68">&#9670;&nbsp;</a></span>isEngineTemperatureCritical()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool isEngineTemperatureCritical </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifica se o motor atingiu a temperatura critica. </p>
+<dl class="section return"><dt>Retorna</dt><dd><code>true</code> se a temperatura ultrapassou o limite crítico, <code>false</code> se está dentro do esperado </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Documentação das variáveis</h2>
+<a id="a1f8e329da4011626d83b98f122bb90e2" name="a1f8e329da4011626d83b98f122bb90e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f8e329da4011626d83b98f122bb90e2">&#9670;&nbsp;</a></span>activeBuzzer</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool activeBuzzer = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a73d7a8f9e247e74206b54c8439c3772a" name="a73d7a8f9e247e74206b54c8439c3772a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73d7a8f9e247e74206b54c8439c3772a">&#9670;&nbsp;</a></span>previousActiveBuzzer</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool previousActiveBuzzer = true</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2e24204e7d4a096b0ab787a0a872e4d4" name="a2e24204e7d4a096b0ab787a0a872e4d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e24204e7d4a096b0ab787a0a872e4d4">&#9670;&nbsp;</a></span>previousTimeBuzzer</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t previousTimeBuzzer = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

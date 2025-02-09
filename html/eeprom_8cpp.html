@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Monitor de temperatura Automotivo: Referência ao ficheiro src/eeprom.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Monitor de temperatura Automotivo
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Localizar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Funções</a> &#124;
+<a href="#var-members">Variáveis</a>  </div>
+  <div class="headertitle"><div class="title">Referência ao ficheiro eeprom.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;eeprom.h&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Diagrama de dependências de inclusão para eeprom.cpp:</div>
+<div class="dyncontent">
+<div class="center"><img src="eeprom_8cpp__incl.png" border="0" usemap="#asrc_2eeprom_8cpp" alt=""/></div>
+<map name="asrc_2eeprom_8cpp" id="asrc_2eeprom_8cpp">
+<area shape="rect" title=" " alt="" coords="5,5,128,32"/>
+<area shape="rect" title=" " alt="" coords="25,80,109,107"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a67a824c9444bf2157e2c6eb0cf477c2a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="eeprom_8cpp.html#a67a824c9444bf2157e2c6eb0cf477c2a">ADDRESS_MAX_TEMPERATURE</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a67a824c9444bf2157e2c6eb0cf477c2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:a931db08e8f426c887e31867318063e38"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="eeprom_8cpp.html#a931db08e8f426c887e31867318063e38">configEEPROM</a> ()</td></tr>
+<tr class="memdesc:a931db08e8f426c887e31867318063e38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configuração inicial da EEPROM.  <a href="eeprom_8cpp.html#a931db08e8f426c887e31867318063e38">Mais...</a><br /></td></tr>
+<tr class="separator:a931db08e8f426c887e31867318063e38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae43da9ec676ae2490c2a3eed7400b7d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="eeprom_8cpp.html#aae43da9ec676ae2490c2a3eed7400b7d">writeMaxTemperatureEEPROM</a> (uint8_t maxTemperature)</td></tr>
+<tr class="memdesc:aae43da9ec676ae2490c2a3eed7400b7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registra a temperatura critica na EEPROM.  <a href="eeprom_8cpp.html#aae43da9ec676ae2490c2a3eed7400b7d">Mais...</a><br /></td></tr>
+<tr class="separator:aae43da9ec676ae2490c2a3eed7400b7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90a1ff2cb8a6cc8f615ba28ead6cfc14"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="eeprom_8cpp.html#a90a1ff2cb8a6cc8f615ba28ead6cfc14">readMaxTemperatureEEPROM</a> ()</td></tr>
+<tr class="memdesc:a90a1ff2cb8a6cc8f615ba28ead6cfc14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Realiza a leitura da temperatura limite registrada na EEPROM.  <a href="eeprom_8cpp.html#a90a1ff2cb8a6cc8f615ba28ead6cfc14">Mais...</a><br /></td></tr>
+<tr class="separator:a90a1ff2cb8a6cc8f615ba28ead6cfc14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24650a1f5ec44738ad330271e38e5a77"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="eeprom_8cpp.html#a24650a1f5ec44738ad330271e38e5a77">resetEEPROM</a> ()</td></tr>
+<tr class="memdesc:a24650a1f5ec44738ad330271e38e5a77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reseta os valores da EEPROM para valores padrão, por padrão os valores são:  <a href="eeprom_8cpp.html#a24650a1f5ec44738ad330271e38e5a77">Mais...</a><br /></td></tr>
+<tr class="separator:a24650a1f5ec44738ad330271e38e5a77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variáveis</h2></td></tr>
+<tr class="memitem:aeb3b55551a5f822967f0b5ed80721afb"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="eeprom_8cpp.html#aeb3b55551a5f822967f0b5ed80721afb">maxTemperatureEEPROM</a> = 0</td></tr>
+<tr class="separator:aeb3b55551a5f822967f0b5ed80721afb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentação das macros</h2>
+<a id="a67a824c9444bf2157e2c6eb0cf477c2a" name="a67a824c9444bf2157e2c6eb0cf477c2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67a824c9444bf2157e2c6eb0cf477c2a">&#9670;&nbsp;</a></span>ADDRESS_MAX_TEMPERATURE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADDRESS_MAX_TEMPERATURE&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentação das funções</h2>
+<a id="a931db08e8f426c887e31867318063e38" name="a931db08e8f426c887e31867318063e38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a931db08e8f426c887e31867318063e38">&#9670;&nbsp;</a></span>configEEPROM()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void configEEPROM </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Configuração inicial da EEPROM. </p>
+
+</div>
+</div>
+<a id="a90a1ff2cb8a6cc8f615ba28ead6cfc14" name="a90a1ff2cb8a6cc8f615ba28ead6cfc14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90a1ff2cb8a6cc8f615ba28ead6cfc14">&#9670;&nbsp;</a></span>readMaxTemperatureEEPROM()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t readMaxTemperatureEEPROM </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Realiza a leitura da temperatura limite registrada na EEPROM. </p>
+<dl class="section return"><dt>Retorna</dt><dd>Temperatura limite registrada na EEPROM (0 a 150ºC) (uint8_t) </dd></dl>
+
+</div>
+</div>
+<a id="a24650a1f5ec44738ad330271e38e5a77" name="a24650a1f5ec44738ad330271e38e5a77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24650a1f5ec44738ad330271e38e5a77">&#9670;&nbsp;</a></span>resetEEPROM()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void resetEEPROM </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reseta os valores da EEPROM para valores padrão, por padrão os valores são: </p>
+<p ><code>maxTemperatureEEPROM</code> -&gt; 90ºC </p>
+
+</div>
+</div>
+<a id="aae43da9ec676ae2490c2a3eed7400b7d" name="aae43da9ec676ae2490c2a3eed7400b7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae43da9ec676ae2490c2a3eed7400b7d">&#9670;&nbsp;</a></span>writeMaxTemperatureEEPROM()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void writeMaxTemperatureEEPROM </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>maxTemperature</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Registra a temperatura critica na EEPROM. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">maxTemperature</td><td>Valor da temperatura crítica a ser armazenado (0 a 150 ºC) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Documentação das variáveis</h2>
+<a id="aeb3b55551a5f822967f0b5ed80721afb" name="aeb3b55551a5f822967f0b5ed80721afb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb3b55551a5f822967f0b5ed80721afb">&#9670;&nbsp;</a></span>maxTemperatureEEPROM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t maxTemperatureEEPROM = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

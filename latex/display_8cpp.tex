@@ -1,0 +1,148 @@
+\hypertarget{display_8cpp}{}\doxysection{Referência ao ficheiro src/display.cpp}
+\label{display_8cpp}\index{src/display.cpp@{src/display.cpp}}
+{\ttfamily \#include \char`\"{}display.\+h\char`\"{}}\newline
+Diagrama de dependências de inclusão para display.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=168pt]{display_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{display_8cpp_a40f496979bb9d7199cca5e0ce136e698}{CLK\+\_\+\+PIN}}~PB13
+\item 
+\#define \mbox{\hyperlink{display_8cpp_a31548bc3bc7db3198806f9490f324273}{DIO\+\_\+\+PIN}}~PB12
+\end{DoxyCompactItemize}
+\doxysubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+TM1637\+Display \mbox{\hyperlink{display_8cpp_aac27343e65a2e973e6979feee309bef0}{display}} (\mbox{\hyperlink{sensorMax31865_8cpp_a40f496979bb9d7199cca5e0ce136e698}{CLK\+\_\+\+PIN}}, \mbox{\hyperlink{display_8cpp_a31548bc3bc7db3198806f9490f324273}{DIO\+\_\+\+PIN}})
+\item 
+void \mbox{\hyperlink{display_8cpp_a83e568a167e9acb2d072e997189c705c}{config\+Display}} ()
+\begin{DoxyCompactList}\small\item\em Configurações iniciais do display. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{display_8cpp_a8ee5439d9345923c4323d84eab69c87d}{update\+Display\+Value}} (int8\+\_\+t value, uint8\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Atualiza o valor exibido pelo display. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{display_8cpp_a69b2dec68c776c975129da8dcc4a7a04}{show\+Temperature}} ()
+\begin{DoxyCompactList}\small\item\em Exibe a temperatura atual no display. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{display_8cpp_af16dd69a9d8170d842ac137cbad411a8}{set\+Display\+Brightness}} (int8\+\_\+t brightness)
+\begin{DoxyCompactList}\small\item\em Define o brilho do display. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{display_8cpp_abc5aad8a6ac6db69cd2fe8125b550f0f}{get\+Display\+Brightness}} ()
+\begin{DoxyCompactList}\small\item\em Retorna o último brilho definido para o display. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{display_8cpp_af9769210e35df77db6134dca7b1e7420}{turn\+Off\+Display}} ()
+\begin{DoxyCompactList}\small\item\em Desliga o display. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variáveis}
+\begin{DoxyCompactItemize}
+\item 
+int8\+\_\+t \mbox{\hyperlink{display_8cpp_ad905120c899ac49ca278b360107d1c0c}{display\+Brightness}} = 7
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentação das macros}
+\mbox{\Hypertarget{display_8cpp_a40f496979bb9d7199cca5e0ce136e698}\label{display_8cpp_a40f496979bb9d7199cca5e0ce136e698}} 
+\index{display.cpp@{display.cpp}!CLK\_PIN@{CLK\_PIN}}
+\index{CLK\_PIN@{CLK\_PIN}!display.cpp@{display.cpp}}
+\doxysubsubsection{\texorpdfstring{CLK\_PIN}{CLK\_PIN}}
+{\footnotesize\ttfamily \#define CLK\+\_\+\+PIN~PB13}
+
+\mbox{\Hypertarget{display_8cpp_a31548bc3bc7db3198806f9490f324273}\label{display_8cpp_a31548bc3bc7db3198806f9490f324273}} 
+\index{display.cpp@{display.cpp}!DIO\_PIN@{DIO\_PIN}}
+\index{DIO\_PIN@{DIO\_PIN}!display.cpp@{display.cpp}}
+\doxysubsubsection{\texorpdfstring{DIO\_PIN}{DIO\_PIN}}
+{\footnotesize\ttfamily \#define DIO\+\_\+\+PIN~PB12}
+
+
+
+\doxysubsection{Documentação das funções}
+\mbox{\Hypertarget{display_8cpp_a83e568a167e9acb2d072e997189c705c}\label{display_8cpp_a83e568a167e9acb2d072e997189c705c}} 
+\index{display.cpp@{display.cpp}!configDisplay@{configDisplay}}
+\index{configDisplay@{configDisplay}!display.cpp@{display.cpp}}
+\doxysubsubsection{\texorpdfstring{configDisplay()}{configDisplay()}}
+{\footnotesize\ttfamily void config\+Display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Configurações iniciais do display. 
+
+\mbox{\Hypertarget{display_8cpp_aac27343e65a2e973e6979feee309bef0}\label{display_8cpp_aac27343e65a2e973e6979feee309bef0}} 
+\index{display.cpp@{display.cpp}!display@{display}}
+\index{display@{display}!display.cpp@{display.cpp}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily TM1637\+Display display (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sensorMax31865_8cpp_a40f496979bb9d7199cca5e0ce136e698}{CLK\+\_\+\+PIN}}}]{,  }\item[{\mbox{\hyperlink{display_8cpp_a31548bc3bc7db3198806f9490f324273}{DIO\+\_\+\+PIN}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{display_8cpp_abc5aad8a6ac6db69cd2fe8125b550f0f}\label{display_8cpp_abc5aad8a6ac6db69cd2fe8125b550f0f}} 
+\index{display.cpp@{display.cpp}!getDisplayBrightness@{getDisplayBrightness}}
+\index{getDisplayBrightness@{getDisplayBrightness}!display.cpp@{display.cpp}}
+\doxysubsubsection{\texorpdfstring{getDisplayBrightness()}{getDisplayBrightness()}}
+{\footnotesize\ttfamily int8\+\_\+t get\+Display\+Brightness (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna o último brilho definido para o display. 
+
+\begin{DoxyReturn}{Retorna}
+Nível de brilho do display ({\ttfamily int8\+\_\+t}). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{display_8cpp_af16dd69a9d8170d842ac137cbad411a8}\label{display_8cpp_af16dd69a9d8170d842ac137cbad411a8}} 
+\index{display.cpp@{display.cpp}!setDisplayBrightness@{setDisplayBrightness}}
+\index{setDisplayBrightness@{setDisplayBrightness}!display.cpp@{display.cpp}}
+\doxysubsubsection{\texorpdfstring{setDisplayBrightness()}{setDisplayBrightness()}}
+{\footnotesize\ttfamily void set\+Display\+Brightness (\begin{DoxyParamCaption}\item[{int8\+\_\+t}]{brightness }\end{DoxyParamCaption})}
+
+
+
+Define o brilho do display. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em brightness} & intensidade do brilho (-\/1,7), $\vert$ -\/1 -\/\texorpdfstring{$>$}{>} desligado $\vert$ 7 -\/\texorpdfstring{$>$}{>} brilho maximo \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{display_8cpp_a69b2dec68c776c975129da8dcc4a7a04}\label{display_8cpp_a69b2dec68c776c975129da8dcc4a7a04}} 
+\index{display.cpp@{display.cpp}!showTemperature@{showTemperature}}
+\index{showTemperature@{showTemperature}!display.cpp@{display.cpp}}
+\doxysubsubsection{\texorpdfstring{showTemperature()}{showTemperature()}}
+{\footnotesize\ttfamily void show\+Temperature (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Exibe a temperatura atual no display. 
+
+\mbox{\Hypertarget{display_8cpp_af9769210e35df77db6134dca7b1e7420}\label{display_8cpp_af9769210e35df77db6134dca7b1e7420}} 
+\index{display.cpp@{display.cpp}!turnOffDisplay@{turnOffDisplay}}
+\index{turnOffDisplay@{turnOffDisplay}!display.cpp@{display.cpp}}
+\doxysubsubsection{\texorpdfstring{turnOffDisplay()}{turnOffDisplay()}}
+{\footnotesize\ttfamily void turn\+Off\+Display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Desliga o display. 
+
+\mbox{\Hypertarget{display_8cpp_a8ee5439d9345923c4323d84eab69c87d}\label{display_8cpp_a8ee5439d9345923c4323d84eab69c87d}} 
+\index{display.cpp@{display.cpp}!updateDisplayValue@{updateDisplayValue}}
+\index{updateDisplayValue@{updateDisplayValue}!display.cpp@{display.cpp}}
+\doxysubsubsection{\texorpdfstring{updateDisplayValue()}{updateDisplayValue()}}
+{\footnotesize\ttfamily void update\+Display\+Value (\begin{DoxyParamCaption}\item[{int8\+\_\+t}]{value,  }\item[{uint8\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+
+
+Atualiza o valor exibido pelo display. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em value} & valor que será exibido pelo display (0 a 255) \\
+\hline
+{\em length} & quantidade de dígitos \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentação das variáveis}
+\mbox{\Hypertarget{display_8cpp_ad905120c899ac49ca278b360107d1c0c}\label{display_8cpp_ad905120c899ac49ca278b360107d1c0c}} 
+\index{display.cpp@{display.cpp}!displayBrightness@{displayBrightness}}
+\index{displayBrightness@{displayBrightness}!display.cpp@{display.cpp}}
+\doxysubsubsection{\texorpdfstring{displayBrightness}{displayBrightness}}
+{\footnotesize\ttfamily int8\+\_\+t display\+Brightness = 7}
+

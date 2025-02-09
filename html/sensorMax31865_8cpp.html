@@ -1,0 +1,357 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Monitor de temperatura Automotivo: Referência ao ficheiro src/sensorMax31865.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Monitor de temperatura Automotivo
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Localizar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Funções</a> &#124;
+<a href="#var-members">Variáveis</a>  </div>
+  <div class="headertitle"><div class="title">Referência ao ficheiro sensorMax31865.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;sensorMax31865.h&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Diagrama de dependências de inclusão para sensorMax31865.cpp:</div>
+<div class="dyncontent">
+<div class="center"><img src="sensorMax31865_8cpp__incl.png" border="0" usemap="#asrc_2sensorMax31865_8cpp" alt=""/></div>
+<map name="asrc_2sensorMax31865_8cpp" id="asrc_2sensorMax31865_8cpp">
+<area shape="rect" title=" " alt="" coords="5,5,188,32"/>
+<area shape="rect" title=" " alt="" coords="24,80,169,107"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:abfcf05153ddbd63d5aff5d018867cc19"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sensorMax31865_8cpp.html#abfcf05153ddbd63d5aff5d018867cc19">CS_PIN</a>&#160;&#160;&#160;PB0</td></tr>
+<tr class="separator:abfcf05153ddbd63d5aff5d018867cc19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40f496979bb9d7199cca5e0ce136e698"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sensorMax31865_8cpp.html#a40f496979bb9d7199cca5e0ce136e698">CLK_PIN</a>&#160;&#160;&#160;PA5</td></tr>
+<tr class="separator:a40f496979bb9d7199cca5e0ce136e698"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f3aa631ddab36f9d478c746a731b013"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sensorMax31865_8cpp.html#a3f3aa631ddab36f9d478c746a731b013">SDO_PIN</a>&#160;&#160;&#160;PA6</td></tr>
+<tr class="separator:a3f3aa631ddab36f9d478c746a731b013"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0516c2fb776c97bce793cd870cbf1b7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sensorMax31865_8cpp.html#ad0516c2fb776c97bce793cd870cbf1b7">SDI_PIN</a>&#160;&#160;&#160;PA7</td></tr>
+<tr class="separator:ad0516c2fb776c97bce793cd870cbf1b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9949925e1930570c44b86a72c396d614"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sensorMax31865_8cpp.html#a9949925e1930570c44b86a72c396d614">REFERENCE_RESISTOR</a>&#160;&#160;&#160;430.0</td></tr>
+<tr class="separator:a9949925e1930570c44b86a72c396d614"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6c2487834bca250882f8ce068b6ea6a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sensorMax31865_8cpp.html#ab6c2487834bca250882f8ce068b6ea6a">NOMINAL_RESISTANCE</a>&#160;&#160;&#160;100.0</td></tr>
+<tr class="separator:ab6c2487834bca250882f8ce068b6ea6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:a575f343e22a08b5473eb2c6223529d99"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sensorMax31865_8cpp.html#a575f343e22a08b5473eb2c6223529d99">configMax31865</a> ()</td></tr>
+<tr class="memdesc:a575f343e22a08b5473eb2c6223529d99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Realiza as configurações necessárias para o funcionamento do sensor RTD através do módulo MAX31865.  <a href="sensorMax31865_8cpp.html#a575f343e22a08b5473eb2c6223529d99">Mais...</a><br /></td></tr>
+<tr class="separator:a575f343e22a08b5473eb2c6223529d99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08c3fb91d797895ccb3b085d22b01cac"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sensorMax31865_8cpp.html#a08c3fb91d797895ccb3b085d22b01cac">engineTemperature</a> ()</td></tr>
+<tr class="memdesc:a08c3fb91d797895ccb3b085d22b01cac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função responsável por coletar a temperatura atual do motor.  <a href="sensorMax31865_8cpp.html#a08c3fb91d797895ccb3b085d22b01cac">Mais...</a><br /></td></tr>
+<tr class="separator:a08c3fb91d797895ccb3b085d22b01cac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4cf943c296dfe30b734368cc7134cdc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sensorMax31865_8cpp.html#aa4cf943c296dfe30b734368cc7134cdc">fautsMAX31865</a> ()</td></tr>
+<tr class="separator:aa4cf943c296dfe30b734368cc7134cdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e9506b792e13bc1632211d1b4ba0de7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sensorMax31865_8cpp.html#a3e9506b792e13bc1632211d1b4ba0de7">setEngineOverheatThreshold</a> (u_int8_t maxTemperature)</td></tr>
+<tr class="memdesc:a3e9506b792e13bc1632211d1b4ba0de7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define a <code>temperatura maxima que o motor pode atingir</code>, é um ponto crucial de todo o código pois define a temperatura critica. Com base na temperatura critica nós conseguimos <code>alertar o usuário</code> caso a temperatura do motor seja maior que a temperatura critica.  <a href="sensorMax31865_8cpp.html#a3e9506b792e13bc1632211d1b4ba0de7">Mais...</a><br /></td></tr>
+<tr class="separator:a3e9506b792e13bc1632211d1b4ba0de7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a099cd3a6293bcfcea6c2dd5a202a53c3"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sensorMax31865_8cpp.html#a099cd3a6293bcfcea6c2dd5a202a53c3">getMaxTemperatureEngine</a> ()</td></tr>
+<tr class="memdesc:a099cd3a6293bcfcea6c2dd5a202a53c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função responsável por retornar a temperatura critica do sistema.  <a href="sensorMax31865_8cpp.html#a099cd3a6293bcfcea6c2dd5a202a53c3">Mais...</a><br /></td></tr>
+<tr class="separator:a099cd3a6293bcfcea6c2dd5a202a53c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variáveis</h2></td></tr>
+<tr class="memitem:a8709f9936a24160fe8d5ba5008d7c519"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sensorMax31865_8cpp.html#a8709f9936a24160fe8d5ba5008d7c519">engineOverheatThreshold</a> = <a class="el" href="eeprom_8cpp.html#a90a1ff2cb8a6cc8f615ba28ead6cfc14">readMaxTemperatureEEPROM</a>()</td></tr>
+<tr class="separator:a8709f9936a24160fe8d5ba5008d7c519"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2940d5147cf4a84449a710e2e6fa847"><td class="memItemLeft" align="right" valign="top">Adafruit_MAX31865&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sensorMax31865_8cpp.html#ae2940d5147cf4a84449a710e2e6fa847">thermometer</a> = Adafruit_MAX31865(<a class="el" href="sensorMax31865_8cpp.html#abfcf05153ddbd63d5aff5d018867cc19">CS_PIN</a>, <a class="el" href="sensorMax31865_8cpp.html#ad0516c2fb776c97bce793cd870cbf1b7">SDI_PIN</a>, <a class="el" href="sensorMax31865_8cpp.html#a3f3aa631ddab36f9d478c746a731b013">SDO_PIN</a>, <a class="el" href="sensorMax31865_8cpp.html#a40f496979bb9d7199cca5e0ce136e698">CLK_PIN</a>)</td></tr>
+<tr class="separator:ae2940d5147cf4a84449a710e2e6fa847"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentação das macros</h2>
+<a id="a40f496979bb9d7199cca5e0ce136e698" name="a40f496979bb9d7199cca5e0ce136e698"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40f496979bb9d7199cca5e0ce136e698">&#9670;&nbsp;</a></span>CLK_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CLK_PIN&#160;&#160;&#160;PA5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abfcf05153ddbd63d5aff5d018867cc19" name="abfcf05153ddbd63d5aff5d018867cc19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfcf05153ddbd63d5aff5d018867cc19">&#9670;&nbsp;</a></span>CS_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CS_PIN&#160;&#160;&#160;PB0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab6c2487834bca250882f8ce068b6ea6a" name="ab6c2487834bca250882f8ce068b6ea6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6c2487834bca250882f8ce068b6ea6a">&#9670;&nbsp;</a></span>NOMINAL_RESISTANCE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NOMINAL_RESISTANCE&#160;&#160;&#160;100.0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9949925e1930570c44b86a72c396d614" name="a9949925e1930570c44b86a72c396d614"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9949925e1930570c44b86a72c396d614">&#9670;&nbsp;</a></span>REFERENCE_RESISTOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REFERENCE_RESISTOR&#160;&#160;&#160;430.0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad0516c2fb776c97bce793cd870cbf1b7" name="ad0516c2fb776c97bce793cd870cbf1b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0516c2fb776c97bce793cd870cbf1b7">&#9670;&nbsp;</a></span>SDI_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SDI_PIN&#160;&#160;&#160;PA7</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3f3aa631ddab36f9d478c746a731b013" name="a3f3aa631ddab36f9d478c746a731b013"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f3aa631ddab36f9d478c746a731b013">&#9670;&nbsp;</a></span>SDO_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SDO_PIN&#160;&#160;&#160;PA6</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentação das funções</h2>
+<a id="a575f343e22a08b5473eb2c6223529d99" name="a575f343e22a08b5473eb2c6223529d99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a575f343e22a08b5473eb2c6223529d99">&#9670;&nbsp;</a></span>configMax31865()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void configMax31865 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Realiza as configurações necessárias para o funcionamento do sensor RTD através do módulo MAX31865. </p>
+<ul>
+<li>basicamente chamamos o método begin, passando como parâmetro quantos fios possui o RTD utilizado. </li>
+</ul>
+
+</div>
+</div>
+<a id="a08c3fb91d797895ccb3b085d22b01cac" name="a08c3fb91d797895ccb3b085d22b01cac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08c3fb91d797895ccb3b085d22b01cac">&#9670;&nbsp;</a></span>engineTemperature()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t engineTemperature </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função responsável por coletar a temperatura atual do motor. </p>
+<ul>
+<li><code>temperature</code> -&gt; recebe a temperatura coletada pelo sensor RTD, que vamos utilizar valores de 0 a 150ºC</li>
+<li><code>roundf</code> arredonda para o inteiro mais próximo, já que valores decimais são irrelevantes neste projeto</li>
+<li><code>fautsMAX31865</code> função que detecta se ocorreu alguma falha na leitura <dl class="section return"><dt>Retorna</dt><dd>retorna a temperatura atual do motor no formato uint8_t, é esperado que o valor retornado esteja entre <code>0 e 150ºC</code> </dd></dl>
+</li>
+</ul>
+
+</div>
+</div>
+<a id="aa4cf943c296dfe30b734368cc7134cdc" name="aa4cf943c296dfe30b734368cc7134cdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4cf943c296dfe30b734368cc7134cdc">&#9670;&nbsp;</a></span>fautsMAX31865()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fautsMAX31865 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a099cd3a6293bcfcea6c2dd5a202a53c3" name="a099cd3a6293bcfcea6c2dd5a202a53c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a099cd3a6293bcfcea6c2dd5a202a53c3">&#9670;&nbsp;</a></span>getMaxTemperatureEngine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t getMaxTemperatureEngine </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função responsável por retornar a temperatura critica do sistema. </p>
+<dl class="section return"><dt>Retorna</dt><dd>A função retorna o conteúdo de <code>maxTemperatureEngine</code>, variável que armazena a temperatura critica do sistema. O valor retornado é do tipo <code>uint8_t</code>que retorna valores entre 0 a 150ºC </dd></dl>
+
+</div>
+</div>
+<a id="a3e9506b792e13bc1632211d1b4ba0de7" name="a3e9506b792e13bc1632211d1b4ba0de7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e9506b792e13bc1632211d1b4ba0de7">&#9670;&nbsp;</a></span>setEngineOverheatThreshold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setEngineOverheatThreshold </td>
+          <td>(</td>
+          <td class="paramtype">u_int8_t&#160;</td>
+          <td class="paramname"><em>maxTemperature</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Define a <code>temperatura maxima que o motor pode atingir</code>, é um ponto crucial de todo o código pois define a temperatura critica. Com base na temperatura critica nós conseguimos <code>alertar o usuário</code> caso a temperatura do motor seja maior que a temperatura critica. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">maxTemperature</td><td>recebe um uint8_t, o valor recebido será definido como a temperatura critica do sistema, é esperado valores entre 0 e 150ºC, mas em definições reais a temperatura critica deverá ficar entre 90 e 100ºC </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Documentação das variáveis</h2>
+<a id="a8709f9936a24160fe8d5ba5008d7c519" name="a8709f9936a24160fe8d5ba5008d7c519"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8709f9936a24160fe8d5ba5008d7c519">&#9670;&nbsp;</a></span>engineOverheatThreshold</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t engineOverheatThreshold = <a class="el" href="eeprom_8cpp.html#a90a1ff2cb8a6cc8f615ba28ead6cfc14">readMaxTemperatureEEPROM</a>()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae2940d5147cf4a84449a710e2e6fa847" name="ae2940d5147cf4a84449a710e2e6fa847"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2940d5147cf4a84449a710e2e6fa847">&#9670;&nbsp;</a></span>thermometer</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Adafruit_MAX31865 thermometer = Adafruit_MAX31865(<a class="el" href="sensorMax31865_8cpp.html#abfcf05153ddbd63d5aff5d018867cc19">CS_PIN</a>, <a class="el" href="sensorMax31865_8cpp.html#ad0516c2fb776c97bce793cd870cbf1b7">SDI_PIN</a>, <a class="el" href="sensorMax31865_8cpp.html#a3f3aa631ddab36f9d478c746a731b013">SDO_PIN</a>, <a class="el" href="sensorMax31865_8cpp.html#a40f496979bb9d7199cca5e0ce136e698">CLK_PIN</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Monitor de temperatura Automotivo: Referência ao ficheiro src/display.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Monitor de temperatura Automotivo
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Localizar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Funções</a> &#124;
+<a href="#var-members">Variáveis</a>  </div>
+  <div class="headertitle"><div class="title">Referência ao ficheiro display.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;display.h&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Diagrama de dependências de inclusão para display.cpp:</div>
+<div class="dyncontent">
+<div class="center"><img src="display_8cpp__incl.png" border="0" usemap="#asrc_2display_8cpp" alt=""/></div>
+<map name="asrc_2display_8cpp" id="asrc_2display_8cpp">
+<area shape="rect" title=" " alt="" coords="5,5,123,32"/>
+<area shape="rect" title=" " alt="" coords="25,80,103,107"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a40f496979bb9d7199cca5e0ce136e698"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="display_8cpp.html#a40f496979bb9d7199cca5e0ce136e698">CLK_PIN</a>&#160;&#160;&#160;PB13</td></tr>
+<tr class="separator:a40f496979bb9d7199cca5e0ce136e698"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31548bc3bc7db3198806f9490f324273"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="display_8cpp.html#a31548bc3bc7db3198806f9490f324273">DIO_PIN</a>&#160;&#160;&#160;PB12</td></tr>
+<tr class="separator:a31548bc3bc7db3198806f9490f324273"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:aac27343e65a2e973e6979feee309bef0"><td class="memItemLeft" align="right" valign="top">TM1637Display&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="display_8cpp.html#aac27343e65a2e973e6979feee309bef0">display</a> (<a class="el" href="sensorMax31865_8cpp.html#a40f496979bb9d7199cca5e0ce136e698">CLK_PIN</a>, <a class="el" href="display_8cpp.html#a31548bc3bc7db3198806f9490f324273">DIO_PIN</a>)</td></tr>
+<tr class="separator:aac27343e65a2e973e6979feee309bef0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83e568a167e9acb2d072e997189c705c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="display_8cpp.html#a83e568a167e9acb2d072e997189c705c">configDisplay</a> ()</td></tr>
+<tr class="memdesc:a83e568a167e9acb2d072e997189c705c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configurações iniciais do display.  <a href="display_8cpp.html#a83e568a167e9acb2d072e997189c705c">Mais...</a><br /></td></tr>
+<tr class="separator:a83e568a167e9acb2d072e997189c705c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ee5439d9345923c4323d84eab69c87d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="display_8cpp.html#a8ee5439d9345923c4323d84eab69c87d">updateDisplayValue</a> (int8_t value, uint8_t length)</td></tr>
+<tr class="memdesc:a8ee5439d9345923c4323d84eab69c87d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Atualiza o valor exibido pelo display.  <a href="display_8cpp.html#a8ee5439d9345923c4323d84eab69c87d">Mais...</a><br /></td></tr>
+<tr class="separator:a8ee5439d9345923c4323d84eab69c87d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69b2dec68c776c975129da8dcc4a7a04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="display_8cpp.html#a69b2dec68c776c975129da8dcc4a7a04">showTemperature</a> ()</td></tr>
+<tr class="memdesc:a69b2dec68c776c975129da8dcc4a7a04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exibe a temperatura atual no display.  <a href="display_8cpp.html#a69b2dec68c776c975129da8dcc4a7a04">Mais...</a><br /></td></tr>
+<tr class="separator:a69b2dec68c776c975129da8dcc4a7a04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af16dd69a9d8170d842ac137cbad411a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="display_8cpp.html#af16dd69a9d8170d842ac137cbad411a8">setDisplayBrightness</a> (int8_t brightness)</td></tr>
+<tr class="memdesc:af16dd69a9d8170d842ac137cbad411a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define o brilho do display.  <a href="display_8cpp.html#af16dd69a9d8170d842ac137cbad411a8">Mais...</a><br /></td></tr>
+<tr class="separator:af16dd69a9d8170d842ac137cbad411a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc5aad8a6ac6db69cd2fe8125b550f0f"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="display_8cpp.html#abc5aad8a6ac6db69cd2fe8125b550f0f">getDisplayBrightness</a> ()</td></tr>
+<tr class="memdesc:abc5aad8a6ac6db69cd2fe8125b550f0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna o último brilho definido para o display.  <a href="display_8cpp.html#abc5aad8a6ac6db69cd2fe8125b550f0f">Mais...</a><br /></td></tr>
+<tr class="separator:abc5aad8a6ac6db69cd2fe8125b550f0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9769210e35df77db6134dca7b1e7420"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="display_8cpp.html#af9769210e35df77db6134dca7b1e7420">turnOffDisplay</a> ()</td></tr>
+<tr class="memdesc:af9769210e35df77db6134dca7b1e7420"><td class="mdescLeft">&#160;</td><td class="mdescRight">Desliga o display.  <a href="display_8cpp.html#af9769210e35df77db6134dca7b1e7420">Mais...</a><br /></td></tr>
+<tr class="separator:af9769210e35df77db6134dca7b1e7420"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variáveis</h2></td></tr>
+<tr class="memitem:ad905120c899ac49ca278b360107d1c0c"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="display_8cpp.html#ad905120c899ac49ca278b360107d1c0c">displayBrightness</a> = 7</td></tr>
+<tr class="separator:ad905120c899ac49ca278b360107d1c0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentação das macros</h2>
+<a id="a40f496979bb9d7199cca5e0ce136e698" name="a40f496979bb9d7199cca5e0ce136e698"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40f496979bb9d7199cca5e0ce136e698">&#9670;&nbsp;</a></span>CLK_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CLK_PIN&#160;&#160;&#160;PB13</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a31548bc3bc7db3198806f9490f324273" name="a31548bc3bc7db3198806f9490f324273"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31548bc3bc7db3198806f9490f324273">&#9670;&nbsp;</a></span>DIO_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DIO_PIN&#160;&#160;&#160;PB12</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentação das funções</h2>
+<a id="a83e568a167e9acb2d072e997189c705c" name="a83e568a167e9acb2d072e997189c705c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83e568a167e9acb2d072e997189c705c">&#9670;&nbsp;</a></span>configDisplay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void configDisplay </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Configurações iniciais do display. </p>
+
+</div>
+</div>
+<a id="aac27343e65a2e973e6979feee309bef0" name="aac27343e65a2e973e6979feee309bef0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac27343e65a2e973e6979feee309bef0">&#9670;&nbsp;</a></span>display()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TM1637Display display </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="sensorMax31865_8cpp.html#a40f496979bb9d7199cca5e0ce136e698">CLK_PIN</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="display_8cpp.html#a31548bc3bc7db3198806f9490f324273">DIO_PIN</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abc5aad8a6ac6db69cd2fe8125b550f0f" name="abc5aad8a6ac6db69cd2fe8125b550f0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc5aad8a6ac6db69cd2fe8125b550f0f">&#9670;&nbsp;</a></span>getDisplayBrightness()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int8_t getDisplayBrightness </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retorna o último brilho definido para o display. </p>
+<dl class="section return"><dt>Retorna</dt><dd>Nível de brilho do display (<code>int8_t</code>). </dd></dl>
+
+</div>
+</div>
+<a id="af16dd69a9d8170d842ac137cbad411a8" name="af16dd69a9d8170d842ac137cbad411a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af16dd69a9d8170d842ac137cbad411a8">&#9670;&nbsp;</a></span>setDisplayBrightness()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setDisplayBrightness </td>
+          <td>(</td>
+          <td class="paramtype">int8_t&#160;</td>
+          <td class="paramname"><em>brightness</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Define o brilho do display. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">brightness</td><td>intensidade do brilho (-1,7), | -1 -&gt; desligado | 7 -&gt; brilho maximo </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a69b2dec68c776c975129da8dcc4a7a04" name="a69b2dec68c776c975129da8dcc4a7a04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69b2dec68c776c975129da8dcc4a7a04">&#9670;&nbsp;</a></span>showTemperature()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void showTemperature </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Exibe a temperatura atual no display. </p>
+
+</div>
+</div>
+<a id="af9769210e35df77db6134dca7b1e7420" name="af9769210e35df77db6134dca7b1e7420"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9769210e35df77db6134dca7b1e7420">&#9670;&nbsp;</a></span>turnOffDisplay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void turnOffDisplay </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Desliga o display. </p>
+
+</div>
+</div>
+<a id="a8ee5439d9345923c4323d84eab69c87d" name="a8ee5439d9345923c4323d84eab69c87d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ee5439d9345923c4323d84eab69c87d">&#9670;&nbsp;</a></span>updateDisplayValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void updateDisplayValue </td>
+          <td>(</td>
+          <td class="paramtype">int8_t&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Atualiza o valor exibido pelo display. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>valor que será exibido pelo display (0 a 255) </td></tr>
+    <tr><td class="paramname">length</td><td>quantidade de dígitos </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Documentação das variáveis</h2>
+<a id="ad905120c899ac49ca278b360107d1c0c" name="ad905120c899ac49ca278b360107d1c0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad905120c899ac49ca278b360107d1c0c">&#9670;&nbsp;</a></span>displayBrightness</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int8_t displayBrightness = 7</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>
