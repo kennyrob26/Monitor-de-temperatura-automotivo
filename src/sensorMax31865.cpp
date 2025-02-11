@@ -10,6 +10,8 @@
 
 uint8_t engineOverheatThreshold = readMaxTemperatureEEPROM();
 
+uint8_t maxRecordedTemperature = 0;
+
 Adafruit_MAX31865 thermometer = Adafruit_MAX31865(CS_PIN, SDI_PIN, SDO_PIN, CLK_PIN);
 
 
@@ -36,6 +38,8 @@ void configMax31865()
 uint8_t engineTemperature()
 {
     uint8_t temperature = (uint8_t) roundf(thermometer.temperature(NOMINAL_RESISTANCE, REFERENCE_RESISTOR)); //Arredonda para o inteiro mais próximo
+
+    updateMaxRecordedTemperature(temperature);
 
     fautsMAX31865();                                       //Verifica se ocorreram falhas na leitura
 
@@ -90,4 +94,15 @@ void setEngineOverheatThreshold(u_int8_t maxTemperature)
 uint8_t getMaxTemperatureEngine()
 {
     return engineOverheatThreshold;
+}
+
+void updateMaxRecordedTemperature(uint8_t temperatureNow)
+{
+  if (maxRecordedTemperature < temperatureNow)
+    maxRecordedTemperature = temperatureNow;
+}
+
+uint8_t getMaxRecordedTemperature()
+{
+  return maxRecordedTemperature;
 }

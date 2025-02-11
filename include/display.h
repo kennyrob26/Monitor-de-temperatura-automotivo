@@ -4,6 +4,7 @@
     #include <Arduino.h>
     #include "TM1637Display.h"
     #include "sensorMax31865.h"
+    #include "buzzer.h"
 
     extern int8_t displayBrightness;
 

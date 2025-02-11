@@ -27,12 +27,19 @@ void loop()
   if(isIgnitionActive())
   {
     showTemperature();
+
     if(!isEngineTemperatureCritical())
     {
+      if(encoderMovesRight())
+      {
+        updateDisplayValue(getMaxRecordedTemperature(), 3);
+        delay(2000);
+      }
+
       checkEncoderInteraction();
     }
     
-  }
+  } 
 
 }
 

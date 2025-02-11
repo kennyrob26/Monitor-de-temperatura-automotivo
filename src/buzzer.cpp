@@ -2,7 +2,7 @@
 
 #define BUZZER_PIN PB15
 #define TIME_TONE 50            //Tempos em milissegundos
-#define FREQUENCY 2200
+#define FREQUENCY 2000
 #define TIME_NO_TONE 400
 
 uint32_t previousTimeBuzzer = 0;

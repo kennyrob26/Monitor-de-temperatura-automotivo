@@ -69,53 +69,49 @@ void checkEncoderInteraction()
 
         switch (buttonPressDuration)
         {
-        //Click
-        case 0:
-            if(getDisplayBrightness() < 0)
-            {
-                setDisplayBrightness(7);
-            }
-            else
-            {
-                //lastEncoderInteractionTime = millis();
+            //Click
+            case 0:
+                if(getDisplayBrightness() < 0)
+                {
+                    setDisplayBrightness(7);
+                }
+                else
+                {
+                    do
+                    {     
+                        if(encoder.isUpdated() || isFirstEncoderInteraction )
+                        {
+                            lastEncoderInteractionTime = millis();
+                            encoderSetsDisplayBrightness();
+                        }
+                        encoderInactiveTime = millis() - lastEncoderInteractionTime;
+                        isFirstEncoderInteraction  = false;
+                    } while (encoderInactiveTime <= 1500);
+                }
+                break;
+
+            //Pressionado por 2 segundos
+            case 1:
+            case 2:
                 do
                 {     
                     if(encoder.isUpdated() || isFirstEncoderInteraction )
                     {
                         lastEncoderInteractionTime = millis();
-                        encoderSetsDisplayBrightness();
+                        encoderSetsTemperatureEngine();
                     }
                     encoderInactiveTime = millis() - lastEncoderInteractionTime;
                     isFirstEncoderInteraction  = false;
                 } while (encoderInactiveTime <= 1500);
-            }
+                writeMaxTemperatureEEPROM(getMaxTemperatureEngine());
+                break;
             
+            case 4:
+                resetEEPROM();
+                break;
 
-            break;
-
-        //Pressionado por 2 segundos
-        case 1:
-        case 2:
-            //lastEncoderInteractionTime = millis();
-            do
-            {     
-                if(encoder.isUpdated() || isFirstEncoderInteraction )
-                {
-                    lastEncoderInteractionTime = millis();
-                    encoderSetsTemperatureEngine();
-                }
-                encoderInactiveTime = millis() - lastEncoderInteractionTime;
-                isFirstEncoderInteraction  = false;
-            } while (encoderInactiveTime <= 1500);
-            writeMaxTemperatureEEPROM(getMaxTemperatureEngine());
-            break;
-        
-        case 4:
-            resetEEPROM();
-            break;
-
-        default:
-            break;
+            default:
+                break;
         }
         isConfigMode      = false;
     }
@@ -141,8 +137,6 @@ void encoderSetsDisplayBrightness()
     
     setDisplayBrightness(brightness);
 
-    
-
     updateDisplayValue(brightness, 3);
     
     
@@ -163,5 +157,13 @@ void encoderSetsTemperatureEngine()
     encoder.bind(&maxTemperature, 1, 0, 150);
     setEngineOverheatThreshold(maxTemperature);
     updateDisplayValue(maxTemperature, 3);
+}
+
+bool encoderMovesRight()
+{
+    if(encoder.isUpdated() && encoder.dir() == 1)
+        return true;
+
+    return false;
 }
 

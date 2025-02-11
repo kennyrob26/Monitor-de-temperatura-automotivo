@@ -1,7 +1,8 @@
 #include "eeprom.h"
-#define ADDRESS_MAX_TEMPERATURE 0
+#define ADDRESS_MAX_TEMPERATURE          0
 
-uint8_t maxTemperatureEEPROM = 0;
+uint8_t maxTemperatureEEPROM         = 0,
+        MaxRecordedTemperatureEEPROM = 0;
 
 /// @brief Configuração inicial da EEPROM
 void configEEPROM()
@@ -31,6 +32,7 @@ uint8_t readMaxTemperatureEEPROM()
     maxTemperatureEEPROM = EEPROM.read(ADDRESS_MAX_TEMPERATURE);
     return maxTemperatureEEPROM;
 }
+
 
 /**
  *  @brief Reseta os valores da EEPROM para valores padrão, por padrão os valores são:

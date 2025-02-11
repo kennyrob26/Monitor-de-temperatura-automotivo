@@ -3,9 +3,12 @@
 #define CLK_PIN PB13
 #define DIO_PIN PB12
 
+uint64_t lastDisplayUpdate = 0;
+
 TM1637Display display(CLK_PIN, DIO_PIN);
 
 int8_t displayBrightness  = 7;
+bool displayState = 1;
 
 /// @brief Configurações iniciais do display
 void configDisplay()
@@ -28,6 +31,25 @@ void updateDisplayValue(int8_t value, uint8_t length)
 void showTemperature()
 {   
     uint8_t temperature = engineTemperature();
+
+    if(isEngineTemperatureCritical())
+    {
+        if((millis() - lastDisplayUpdate ) > 250)
+        {
+            if(displayState == true)
+            {
+                setDisplayBrightness(7);
+                displayState = false;
+            }
+            else
+            {
+                setDisplayBrightness(-1);
+                displayState = true;
+            }
+            lastDisplayUpdate = millis();
+        }
+    }
+
     updateDisplayValue(temperature, 3);
 }
 
