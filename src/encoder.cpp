@@ -159,9 +159,23 @@ void encoderSetsTemperatureEngine()
     updateDisplayValue(maxTemperature, 3);
 }
 
-bool encoderMovesRight()
+/**
+ * @brief Retorna se o encoder foi movido para a direita na ultima atualização, permitindo tomar decisões a partir desta informação
+ */
+bool encoderMovedRight()
 {
-    if(encoder.isUpdated() && encoder.dir() == 1)
+    if(encoder.dir() == 1)
+        return true;
+
+    return false;
+}
+
+/**
+ * @brief Retorna se o encoder foi movido para a esquerda na ultima atualização, permitindo tomar decisões a partir desta informação
+ */
+bool encoderMovedLeft()
+{
+    if(encoder.dir() == 0)
         return true;
 
     return false;

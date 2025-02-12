@@ -27,11 +27,12 @@ void updateDisplayValue(int8_t value, uint8_t length)
     display.showNumberDec(value, false, length, 1);
 }
 
-/// @brief Exibe a temperatura atual no display
+/// @brief Exibe a temperatura atual no display, se o sistema entrar em modo crítico, ou seja, o motor ultrtapassar a temperatura definida, o diplay começa a piscar demonstrando a temperatura atual, com isso conseguimos desviar a atenção do usuário para o display
 void showTemperature()
 {   
     uint8_t temperature = engineTemperature();
 
+    //Entra em modo critico (pisca display)
     if(isEngineTemperatureCritical())
     {
         if((millis() - lastDisplayUpdate ) > 250)

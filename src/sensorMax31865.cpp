@@ -11,6 +11,7 @@
 uint8_t engineOverheatThreshold = readMaxTemperatureEEPROM();
 
 uint8_t maxRecordedTemperature = 0;
+uint8_t minRecordedTemperature = 150;
 
 Adafruit_MAX31865 thermometer = Adafruit_MAX31865(CS_PIN, SDI_PIN, SDO_PIN, CLK_PIN);
 
@@ -37,9 +38,10 @@ void configMax31865()
  */
 uint8_t engineTemperature()
 {
-    uint8_t temperature = (uint8_t) roundf(thermometer.temperature(NOMINAL_RESISTANCE, REFERENCE_RESISTOR)); //Arredonda para o inteiro mais próximo
+    uint8_t temperature = (uint8_t) roundf(thermometer.temperature(NOMINAL_RESISTANCE, REFERENCE_RESISTOR));
 
     updateMaxRecordedTemperature(temperature);
+    updateMinRecordedTemperature(temperature);
 
     fautsMAX31865();                                       //Verifica se ocorreram falhas na leitura
 
@@ -88,7 +90,6 @@ void setEngineOverheatThreshold(u_int8_t maxTemperature)
 
 /**
  * @brief Função responsável por retornar a temperatura critica do sistema.
- * 
  * @return A função retorna o conteúdo de `maxTemperatureEngine`, variável que armazena a temperatura critica do sistema. O valor retornado é do tipo `uint8_t`que retorna valores entre 0 a 150ºC
  */
 uint8_t getMaxTemperatureEngine()
@@ -96,13 +97,48 @@ uint8_t getMaxTemperatureEngine()
     return engineOverheatThreshold;
 }
 
+/**
+ * @brief Atualiza a temperatura máxima coletada pelo sistema, ou seja qual foi o pico, ou a maior temperatura coletada.
+ * @param temperatureNow é a temperatura atual, sempre que o sistema obtém a temperatura atual, esta será comparada com `maxRecordedTemperature`, se a temperatura atual for maior do que a maior registrada, então a temperatura atual passa a ser a nova temperatura máxima
+ */
 void updateMaxRecordedTemperature(uint8_t temperatureNow)
 {
   if (maxRecordedTemperature < temperatureNow)
     maxRecordedTemperature = temperatureNow;
 }
 
+/**
+ * @brief Retorna a temperatura máxima que o sistema atingiu durante o funcionamento. Este valor é resetado sempre que o veículo desliga.
+ * @return retorna maxRecordedTemperature, que nada mais é do que a temperatura máxima registrada durante o funcionamento do veículo.
+ */
 uint8_t getMaxRecordedTemperature()
 {
   return maxRecordedTemperature;
+}
+
+/**
+ * @brief Atualiza a temperatura mínima coletada pelo sistema, ou seja qual foi a menor temperatura coletada.
+ * @param temperatureNow é a temperatura atual, sempre que o sistema obtém a temperatura atual, esta será comparada com `minRecordedTemperature`, se a temperatura atual for menor do que a menor registrada, então a temperatura atual passa a ser a nova temperatura mínima
+ */
+void updateMinRecordedTemperature(uint8_t temperatureNow)
+{
+  if(minRecordedTemperature > temperatureNow)
+    minRecordedTemperature = temperatureNow;
+}
+
+/**
+ * @brief Retorna a temperatura mínima que o sistema atingiu durante o funcionamento. Este valor é resetado sempre que o veículo desliga.
+ * @return retorna minRecordedTemperature, que nada mais é do que a temperatura mínima registrada durante o funcionamento do veículo.
+ */
+uint8_t getMinRecordedTemperature()
+{
+  return minRecordedTemperature;
+  //return minRecordedTemperature;
+}
+
+//// @brief Reseta os valores mínimos e máximos de temperatura definido
+void resetRecordedTemperatures()
+{
+  updateMaxRecordedTemperature(0);
+  updateMinRecordedTemperature(150);
 }

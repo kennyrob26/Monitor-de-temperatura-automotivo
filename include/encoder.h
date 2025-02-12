@@ -15,7 +15,8 @@
     void encoderSetsTemperatureEngine();
     void encoderSetsDisplayBrightness();
 
-    bool encoderMovesRight();
+    bool encoderMovedRight();
+    bool encoderMovedLeft();
 
 
 #endif

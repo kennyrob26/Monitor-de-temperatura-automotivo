@@ -30,12 +30,19 @@ void loop()
 
     if(!isEngineTemperatureCritical())
     {
-      if(encoderMovesRight())
+      if(encoder.isUpdated())           //Se o encoder rotacionado para direita mostra a temperatura critica
       {
-        updateDisplayValue(getMaxRecordedTemperature(), 3);
-        delay(2000);
+        if(encoderMovedLeft())
+        {
+          updateDisplayValue(getMinRecordedTemperature(), 3);
+          delay(1000);
+        }
+        else if(encoderMovedRight())
+        {
+          updateDisplayValue(getMaxRecordedTemperature(), 3);
+          delay(1000);
+        }
       }
-
       checkEncoderInteraction();
     }
     
@@ -46,6 +53,7 @@ void loop()
 void wakeUpFromIgnition()
 {
     configDisplay();
+    resetRecordedTemperatures();
 }
 
 bool isIgnitionActive()

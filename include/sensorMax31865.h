@@ -33,6 +33,11 @@
     void updateMaxRecordedTemperature(uint8_t temperatureNow);
     uint8_t getMaxRecordedTemperature();
 
+    void updateMinRecordedTemperature(uint8_t temperatureNow);
+    uint8_t getMinRecordedTemperature();
+    void resetRecordedTemperatures();
+
+
 
 
 

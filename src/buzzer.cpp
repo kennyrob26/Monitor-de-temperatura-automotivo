@@ -28,6 +28,8 @@ bool isEngineTemperatureCritical()
         changeStateBuzzer();
         return true;
     }
+
+    noTone(BUZZER_PIN);
     return false;
     
 }
