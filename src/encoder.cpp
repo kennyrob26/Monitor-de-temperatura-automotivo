@@ -137,7 +137,7 @@ void encoderSetsDisplayBrightness()
     
     setDisplayBrightness(brightness);
 
-    updateDisplayValue(brightness, 3);
+    updateDisplayValue(brightness);
     
     
 }
@@ -156,7 +156,7 @@ void encoderSetsTemperatureEngine()
     static uint8_t maxTemperature = getMaxTemperatureEngine();
     encoder.bind(&maxTemperature, 1, 0, 150);
     setEngineOverheatThreshold(maxTemperature);
-    updateDisplayValue(maxTemperature, 3);
+    updateDisplayValue(maxTemperature);
 }
 
 /**

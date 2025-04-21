@@ -7,6 +7,7 @@
 
 uint32_t previousTimeBuzzer = 0;
 
+bool stateAlarm           = true;
 bool activeBuzzer         = false;
 bool previousActiveBuzzer = true;
 
@@ -16,10 +17,17 @@ void changeStateBuzzer();
 ///@return `true` se a temperatura ultrapassou o limite crítico, `false` se está dentro do esperado
 bool isEngineTemperatureCritical()
 {
-    if(engineTemperature() > getMaxTemperatureEngine())
+
+    if(engineTemperature() > getMaxTemperatureEngine() && stateAlarm == true)
     {
-        //noInterrupts();
-        Serial.println(1);
+        //desliga o alarme se o usuário interagir com o encoder
+        if(encoder.isUpdated())
+        {
+            stateAlarm = false;
+            setDisplayBrightness(7);
+            return false;
+        }
+
         if(activeBuzzer != previousActiveBuzzer)
         {
             previousTimeBuzzer = millis();
@@ -28,9 +36,20 @@ bool isEngineTemperatureCritical()
         changeStateBuzzer();
         return true;
     }
+    else
+    {
+        
+        if(engineTemperature() <= getMaxTemperatureEngine())
+        {
+            stateAlarm = true; //Ou seja quando a temperatura não for mais critica, o alarme pode disparar novamente
+            activeBuzzer         = false;
+            previousActiveBuzzer = true;
+        }
+        noTone(BUZZER_PIN);
+        return false;
+    }
 
-    noTone(BUZZER_PIN);
-    return false;
+
     
 }
 

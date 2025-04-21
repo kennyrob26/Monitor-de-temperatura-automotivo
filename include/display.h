@@ -9,7 +9,7 @@
     extern int8_t displayBrightness;
 
     void configDisplay();
-    void updateDisplayValue(int8_t value, uint8_t length);
+    void updateDisplayValue(int8_t value);
     void showTemperature();  
     void turnOffDisplay();
 

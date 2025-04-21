@@ -5,8 +5,14 @@
 #define SDO_PIN PA6
 #define SDI_PIN PA7
 
+#define MIN_TEMPERATURE 70
+
+#define MAX_TEMPERATURE 150
+
 #define REFERENCE_RESISTOR 430.0    //Valor do resistor de referência utilizado pelo MAX
 #define NOMINAL_RESISTANCE 100.0    //Resistência nominal do PT100
+
+
 
 uint8_t engineOverheatThreshold = readMaxTemperatureEEPROM();
 
@@ -139,6 +145,6 @@ uint8_t getMinRecordedTemperature()
 //// @brief Reseta os valores mínimos e máximos de temperatura definido
 void resetRecordedTemperatures()
 {
-  updateMaxRecordedTemperature(0);
-  updateMinRecordedTemperature(150);
+  maxRecordedTemperature = MIN_TEMPERATURE;
+  minRecordedTemperature = MAX_TEMPERATURE;
 }
